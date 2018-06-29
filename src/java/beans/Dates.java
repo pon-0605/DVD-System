@@ -17,17 +17,15 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class Dates {
-    Dates d = new Dates();
-    
-    SimpleDateFormat d2 = new SimpleDateFormat("yyyy年MM月dd日 HH時mm分ss秒");
-    String date = d2.format(d);
+    Date d = new Date();
+    SimpleDateFormat d2 = new SimpleDateFormat("yyyy年MM月dd日HH時mm分ss秒");
+    String day = d2.format(d); 
 
-    public String getDate() {
-        return date;
+    public String getDay() {
+        return day;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDay(String day) {
+        this.day = day;
     }
-    
 }
