@@ -15,8 +15,8 @@ body {
 
 .header .login-ifno {
     position: absolute;
-    left:210px;
-    top:25px;
+    left:150px;
+    top:28px;
 }
 
 .header .login-ifno span{
@@ -30,6 +30,13 @@ body {
     top:26px;
     color: #000000;
     font-size: 17px;
+}
+
+.header .title{
+    font-size: 30px;
+    position: absolute;
+    top: 17px;
+    left: 10px;
 }
 
 

@@ -12,8 +12,8 @@ public class LoginSession implements Serializable{
     private boolean adminFlg;
     
     {
-        userId = "test";
-        role = "admin";
+        userId = "神戸　渉吾";
+        role = "店長";
         adminFlg = true;
     }
 
