@@ -24,13 +24,10 @@ body {
     font-weight:bold;
 }
 
-.header .day-ifno{
+.header .time{
     position: absolute;
     right: 100px;
     top:25px;
-}
-
-.header .day-ifno span{
     color: #000000;
     font-size: 30px;
 }
