@@ -3,38 +3,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <head>
+    <head jsfc="h:head">
         <title>header</title>
         <link rel="stylesheet" type="text/css" href="/resources/css/mystyle.css"/>
     </head>
     <body>
-        <ui:composition>
-            <h:form>
-                <nav>
-                    <ul class="nav nav-tabs nav-justified">
-                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">スケジュール管理<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                 <li><h:commandLink action="#">スケジュール一覧</h:commandLink></li>
-                                 <li><h:commandLink action="#">スケジュール検索</h:commandLink></li>
-                                <li><h:commandLink action="#">スケジュール登録</h:commandLink></li>
-                            </ul>
-                        </li>  
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">イベント管理<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><h:commandLink action="#{eventBeanList.list()}">イベント一覧</h:commandLink></li>
-                                <li><h:commandLink action="#{eventBean.create()}">イベント登録</h:commandLink></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">ユーザ管理<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">ユーザ一覧</a></li>
-                                <li><a href="#">ユーザ登録</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </h:form>
-        </ui:composition> 
+        <a href="#" class="square_btnf">会員検索</a>
+        <table border="1" align="right">
+            <tr>
+                <th>電話番号</th><th>性別</th><th>年齢</th><th>最終利用日</th><th>登録日</th><th>有効期限</th>
+            </tr>
+            <tr>
+                <td>011-831-5511</td><td>男</td><td>47</td><td>2018/6/4</td><td>2018/4/10</td><td>2019/4/10</td>
+            </tr>
+            <tr>
+                <td colspan="4">札幌市白石区菊水6条3丁目4-28</td><td colspan="2"></td>
+            </tr>
+        </table>
     </body>
 </html>

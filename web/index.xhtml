@@ -20,7 +20,11 @@
             <ui:define name="content">
 
                 <div class="container">
-                    
+                    <div id="menu">
+                        <ui:insert name="menu">
+                            <ui:include src="/templates/menu.xhtml"/>
+                        </ui:insert>
+                    </div>
                 </div>
             </ui:define>
         </ui:composition>
