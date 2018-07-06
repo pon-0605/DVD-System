@@ -54,11 +54,12 @@ body {
 .sidebar {
     position:relative; 
     float:right; 
-    
-    
     width: 140px;
     height: 90vh;
     background-color:#BBBBBB;
+}
+
+.sidebr-btn {
     
 }
 .square_btn{
