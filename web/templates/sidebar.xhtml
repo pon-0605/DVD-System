@@ -10,19 +10,64 @@
     </head>
     <body>。
         <ui:composition>
-            <div class="sidebar">
-                <a href="#" id="btn1" class="square_btn">基本</a> <a href="#" id="btnk1" class="square_btn">更新</a>
-                <a href="#" id="btn2" class="square_btn">入会</a> <a href="#" id="btnk2" class="square_btn">入会</a>
-                <a href="#" id="btn3" class="square_btn">退会</a> <a href="#" id="btnk3" class="square_btn">退会</a>
-                <a href="#" id="btn4" class="square_btn">貸出</a> <a href="#" id="btnk4" class="square_btn">貸出</a>
-                <a href="#" id="btn5" class="square_btn">返却</a> <a href="#" id="btnk5" class="square_btn"></a>
-                <a href="#" id="btn6" class="square_btn">レジ〆</a>
-                <a href="#" id="btn7" class="square_btn">切り替え更新へ</a>
+            <div class="sidebar"> 
+                
+                <p id="kihon" class="kihon">
+                    <a href="#" id="btn1" class="square_btn">基本</a>
+                    <a href="#" id="btn2" class="square_btn">入会</a>
+                    <a href="#" id="btn3" class="square_btn">退会</a>
+                    <a href="#" id="btn4" class="square_btn">貸出</a>
+                    <a href="#" id="btn5" class="square_btn">返却</a>  
+                    <a href="#" id="btn6" class="square_btn">レジ〆</a>   
+                    <a href="#" id="btn7" class="square_btn">切り替え更新へ</a>
+                </p>
+                
+                <p id="change" class="change"> 
+                   <a href="#" id="btnk1" class="square_btn">更新</a>       
+                   <a href="#" id="btnk2" class="square_btn">会員更新</a>
+                   <a href="#" id="btnk3" class="square_btn">作品情報更新</a>
+                   <a href="#" id="btnk4" class="square_btn">在庫検索</a>
+                   <a href="#" id="btnk5" class="square_btn">新作登録</a>
+                   <a href="#" id="btnk6" class="square_btn">ジャーナル検索</a>
+                   <a href="#" id="btnk7" class="square_btn">切り替え権限へ</a>
+                </p>
+                
+                <p id="role" class="role">
+                   <a href="#" id="btnr1" class="square_btn">権限</a>  
+                   <a href="#" id="btnr2" class="square_btn">ブラック会員一覧</a>
+                   <a href="#" id="btnr4" class="square_btn">不良メディア</a>
+                   <a href="#" id="btnr6" class="square_btn">権限付与</a>
+                   <a href="#" id="btnr7" class="square_btn">切り替え基本へ</a>
+                </p>
                 
             </div>
             <script>
-            // ボタン7を押したとき
+                
+            $(function() {
+                  $('#btn7').click(function(){
+                      $('#kihon').hide();
+                      $('#change').show();
+                  });
+            });
             
+            $(function() {
+                  $('#btnk7').click(function(){
+                      $('#change').hide();
+                      $('#role').show();
+                  });
+            });
+            
+            $(function() {
+                  $('#btnr7').click(function(){
+                      $('#role').hide();
+                      $('#kihon').show();
+                  });
+            });
+            
+            
+            
+            // ボタン7を押したとき
+        /*
             $("[id^=btn7]").on("click", function(){
 		// replaceWithメソッドで指定
 		$("#btn").replaceWith('<a href="index.xhtml" id="btnk" class="square_btn">更新</a>');
@@ -57,10 +102,8 @@
                 });
              });
          });
-       
-
-            
-
+       */
+               
             </script>
             
         </ui:composition> 

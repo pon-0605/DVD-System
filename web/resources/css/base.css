@@ -57,6 +57,7 @@ body {
     width: 140px;
     height: 90vh;
     background-color:#BBBBBB;
+    overflow:hidden;
 }
 
 .sidebr-btn {
@@ -79,6 +80,17 @@ body {
     transform: translateY(4px);/*下に動く*/
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
     border-bottom: none;
+}
+
+.kihon {
+    display: block;
+}
+
+.change {
+    display: none;
+}
+.role {
+    display: none;
 }
 
 /* informationデザイン */
