@@ -15,7 +15,8 @@ body {
 
 .header .login-ifno {
     position: absolute;
-    right: 20px;
+    font-size: 17px;
+    right: 100px;
     top:25px;
 }
 

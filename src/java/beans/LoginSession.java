@@ -8,11 +8,13 @@ import javax.inject.Named;
 @SessionScoped
 public class LoginSession implements Serializable{
     private String userId;
+    private String userName;
     private String role;
     private boolean adminFlg;
     
     {
-        userId = "神戸　渉吾";
+        userId = "1010";
+        userName="神戸　渉吾";
         role = "店長";
         adminFlg = true;
     }
@@ -24,7 +26,14 @@ public class LoginSession implements Serializable{
     public void setUserId(String userId) {
         this.userId = userId;
     }
+    
+    public String getUserName() {
+        return userName;
+    }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
     public String getRole() {
         return role;
     }

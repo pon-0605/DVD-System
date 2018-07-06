@@ -81,7 +81,7 @@ body {
     border-bottom: none;
 }
 
-/* informationデザイン */
+/* membermenuデザイン */
 table.memberif{
      position: relative;
      width:700px;
@@ -90,7 +90,7 @@ table.memberif{
   }
   .membername{
       position: absolute;
-      font-size: 21px; 
+      font-size: 18px; 
       top: 90px;
       left: 200px;
   }
