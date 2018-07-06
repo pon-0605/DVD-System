@@ -3,6 +3,7 @@ package beans;
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 @Named
 @SessionScoped
@@ -10,6 +11,7 @@ public class LoginSession implements Serializable{
     private String userId;
     private String role;
     private boolean adminFlg;
+    
     
     {
         userId = "神戸　渉吾";
