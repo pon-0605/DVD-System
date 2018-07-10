@@ -3,43 +3,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:apex="http://primefaces.org/ui"> 
     <head>
         <title>sidebar</title>
         <link rel="stylesheet" type="text/css" href="/resources/css/mystyle.css"/>
+        <link rel="stylesheet" type="text/css" href="/resources/css/base.css"/>
     </head>
-    <body>。
+    <h:body>。
         <ui:composition>
             <div class="sidebar"> 
+                <h:form>
+                    <p id="kihon" class="kihon">
+                        <h:commandLink value="基本" id="btn1" styleClass="square_btn"/>
+                        <h:commandLink value="入会" action="#{taikaiBean.next()}" id="btn2" styleClass="square_btn"/>
+                        <h:commandLink value="退会" action="#{taikaiBean.next()}" id="btn3" styleClass="square_btn"/>
+                        <h:commandLink value="貸出" action="#{taikaiBean.next()}" id="btn4" styleClass="square_btn"/>
+                        <h:commandLink value="返却" action="#{taikaiBean.next()}" id="btn5" styleClass="square_btn"/>
+                        <h:commandLink value="レジ" action="#{taikaiBean.next()}" id="btn6" styleClass="square_btn"/>
+                        <a href="#" id="btn7" class="square_btn">切り替え更新へ</a>
+                    </p>
                 
-                <p id="kihon" class="kihon">
-                    <a href="#" id="btn1" class="square_btn">基本</a>
-                    <a href="#" id="btn2" class="square_btn">入会</a>
-                    <a href="#" id="btn3" class="square_btn">退会</a>
-                    <a href="#" id="btn4" class="square_btn">貸出</a>
-                    <a href="#" id="btn5" class="square_btn">返却</a>  
-                    <a href="#" id="btn6" class="square_btn">レジ〆</a>   
-                    <a href="#" id="btn7" class="square_btn">切り替え更新へ</a>
-                </p>
+                    <p id="change" class="change"> 
+                        <h:commandLink value="更新" action="#{taikaiBean.next()}" id="btnk1" class="square_btn"/>       
+                        <h:commandLink value="会員更新" action="#{taikaiBean.next()}" id="btnk2" class="square_btn"/>       
+                        <h:commandLink value="作品情報更新" action="#{taikaiBean.next()}" id="btnk3" class="square_btn"/>       
+                        <h:commandLink value="在庫検索" action="#{taikaiBean.next()}" id="btnk4" class="square_btn"/>       
+                        <h:commandLink value="新作登録" action="#{taikaiBean.next()}" id="btnk5" class="square_btn"/>       
+                        <h:commandLink value="ジャーナル検索" action="#{taikaiBean.next()}" id="btnk6" class="square_btn"/>
+                        <a href="#" id="btnk7" class="square_btn">切り替え権限へ</a>
+                    </p>
                 
-                <p id="change" class="change"> 
-                   <a href="#" id="btnk1" class="square_btn">更新</a>       
-                   <a href="#" id="btnk2" class="square_btn">会員更新</a>
-                   <a href="#" id="btnk3" class="square_btn">作品情報更新</a>
-                   <a href="#" id="btnk4" class="square_btn">在庫検索</a>
-                   <a href="#" id="btnk5" class="square_btn">新作登録</a>
-                   <a href="#" id="btnk6" class="square_btn">ジャーナル検索</a>
-                   <a href="#" id="btnk7" class="square_btn">切り替え権限へ</a>
-                </p>
-                
-                <p id="role" class="role">
-                   <a href="#" id="btnr1" class="square_btn">権限</a>  
-                   <a href="#" id="btnr2" class="square_btn">ブラック会員一覧</a>
-                   <a href="#" id="btnr4" class="square_btn">不良メディア</a>
-                   <a href="#" id="btnr6" class="square_btn">権限付与</a>
-                   <a href="#" id="btnr7" class="square_btn">切り替え基本へ</a>
-                </p>
-                
+                    <p id="role" class="role">
+                        <h:commandLink value="権限" action="#{taikaiBean.next()}" id="btnr1" class="square_btn"/>  
+                        <h:commandLink value="ブラック会員一覧" action="#{taikaiBean.next()}" id="btnr2" class="square_btn"/>  
+                        <h:commandLink value="不良メディア" action="#{taikaiBean.next()}" id="btnr3" class="square_btn"/>  
+                        <h:commandLink value="権限付与" action="#{taikaiBean.next()}" id="btnr4" class="square_btn"/>  
+                        <a href="#" id="btnr5" class="square_btn">切り替え基本へ</a>
+                    </p>
+                </h:form>
             </div>
             <script>
                 
@@ -58,7 +59,7 @@
             });
             
             $(function() {
-                  $('#btnr7').click(function(){
+                  $('#btnr5').click(function(){
                       $('#role').hide();
                       $('#kihon').show();
                   });
@@ -107,5 +108,5 @@
             </script>
             
         </ui:composition> 
-    </body>
+    </h:body>
 </html>
