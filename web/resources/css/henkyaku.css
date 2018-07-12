@@ -1,0 +1,31 @@
+body {
+    
+}
+
+.hd1{                   //1行目
+    font-size: 25px;
+    text-align: left;
+    text-align:center;
+}
+.hd2{                   //No
+    width: 100px;
+    font-size: 20px;
+}
+.hd3{                   //タイトル
+    width: 150px;
+    font-size: 20px;
+}
+.hd4{                   //ランク
+    width: 100px;
+    font-size: 20px;
+}
+.hd5{                   //返却予定日
+    width: 100px;
+    font-size: 20px;
+}
+
+.hd6{                   //databaseからの出力
+    font-size: 30px;
+}
+
+

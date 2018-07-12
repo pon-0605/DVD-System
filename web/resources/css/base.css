@@ -78,7 +78,7 @@ table.tableif{
     text-decoration: none;
     background: #668ad8;/*ボタン色*/
     color: #FFF;
-    border-bottom: solid 4px #627295;
+    border-bottom: solid 5px #627295;
     border-radius: 3px;
 }
 .square_btn:active {/*ボタンを押したとき*/
