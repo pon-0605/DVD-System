@@ -14,47 +14,89 @@
         <h:outputScript name="bootstrap/js/bootstrap.min.js"/>
         <title>返却画面</title>
         <h:outputStylesheet library="css" name="henkyaku.css"/>
-   
+
     </h:head>
     <body>
-         <div id="top">
+        <div id="top">
             <ui:insert name="top">
                 <ui:include src="/templates/header.xhtml"/>
             </ui:insert>
         </div>
-        
+
         <div id="sidebar">
             <ui:insert name="sidebar">
                 <ui:include src="/templates/sidebar.xhtml"/>
             </ui:insert>
         </div>
-        <h:dataTable value="#{henkyakuBb.henkyakubean}" var="h" border="1" 
-                     headerClass="hd1" >
-            <h:column>
-                <f:facet name="header" class="hd2">
-                    <h:outputText  value="No"/>
-                </f:facet>
-                <h:outputText class="hd6" value="#{h.no}"/> 
-            </h:column>
-            <h:column>
-                <f:facet name="header" class="hd3">
-                    <h:outputText value="タイトル"/>
-                </f:facet>
-               <h:outputText class="hd6" value="#{h.title}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header" class="hd4">
-                    <h:outputText value="ランク"/>
-                </f:facet>
-                <h:outputText class="hd6" value="#{h.rank}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header" class="hd5">
-                    <h:outputText  value="返却予定日"/>
-                </f:facet>
-                <h:outputText class="hd6" value="#{h.henkyakubi}"/>
-            </h:column>
-            
-        </h:dataTable>
+        <div class="hd">
+            <h:dataTable value="#{henkyakuBb.henkyakubean}" var="h" border="2" 
+                         headerClass="hd1" >
+                <h:column>
+                    <f:facet name="header" class="hd2">
+                        <h:outputText  value="No"/>
+                    </f:facet>
+                    <h:outputText class="hd6" value="#{h.no}"/> 
+                </h:column>
+                <h:column>
+                    <f:facet name="header" class="hd3">
+                        <h:outputText value="タイトル"/>
+                    </f:facet>
+                    <h:outputText class="hd6" value="#{h.title}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header" class="hd4">
+                        <h:outputText value="ランク"/>
+                    </f:facet>
+                    <h:outputText class="hd6" value="#{h.rank}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header" class="hd5">
+                        <h:outputText  value="返却予定日"/>
+                    </f:facet>
+                    <h:outputText class="hd6" value="#{h.henkyakubi}"/>
+                </h:column>
+            </h:dataTable>
+        </div>
+        <div class="div1">
+        <tr>
+            <table border="1" class="tb1">
+                <div>
+                    <td class="td1">延滞日数</td>
+                    <td class="td2">10</td>
+                </div>
+            </table>
+            <table border="1" class="tb2">
+                <div>
+                    <td class="td3">延滞本数</td>
+                    <td class="td4">2</td>
+                </div>
+            </table>
+        </tr>
+        <tr>
+            <table border="1" class="tb3">
+                <div>
+                    <td class="td5">延滞料金</td>
+                    <td class="td6">1,2000</td>
+                </div>
+            </table>
+        </tr>
+        <tr>
+            <table border="1" class="tb4">
+                <div>
+                    <td class="td7">預金</td>
+                    <td class="td8">10,000</td>
+                </div>
+            </table>
+            <table border="1" class="tb5">
+                <div>
+                    <td class="td9">おつり</td>
+                    <td class="td10">8,800</td>
+                </div>
+            </table>
+        </tr>
+        </div>
+
+
+
     </body>
 </html>
