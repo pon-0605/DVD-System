@@ -3,6 +3,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <title>退会画面</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="bootstrap/css/bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="base.css"/>
+        <h:outputScript library="js" name="jquery-3.2.0.min.js"/>
+        <h:outputScript name="bootstrap/js/bootstrap.min.js"/> 
+    </h:head>
+    <h:body>
+       <div id="top">
+            <ui:insert name="top">
+                <ui:include src="/templates/header.xhtml"/>
+            </ui:insert>
+        </div>
+        
+        <div id="sidebar">
+            <ui:insert name="sidebar">
+                <ui:include src="/templates/sidebar.xhtml"/>
+            </ui:insert>
+        </div>
+        
+        <div id="id">会員ID 10101010</div>
+        
+        
+
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     
@@ -18,7 +48,7 @@
         <h:outputScript name="bootstrap/js/bootstrap.min.js"/> 
         
     </h:head>
-    <h:body>
+    
        <div id="top">
             <ui:insert name="top">
                 <ui:include src="/templates/header.xhtml"/>
@@ -58,5 +88,5 @@
         </h:commandButton>
         
         <h:commandButton value="確定" action="#{taikaiBb.delete()}" styleClass="square_btnfff" /> 
-    </h:body>
+    
 </html>
