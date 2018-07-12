@@ -61,6 +61,24 @@ body {
     font-size: 16px;
     
 }
+
+.square_btnfff{
+    position: relative;
+    top: 22px;
+    left: 50px;
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #FFF;/*ボタン色*/
+    color: #000000;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    font-size: 16px;
+    
+}
+
 .square_btnff:active {/*ボタンを押したとき*/
     -ms-transform: translateY(4px);
     -webkit-transform: translateY(4px);

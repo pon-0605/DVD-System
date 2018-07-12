@@ -32,7 +32,9 @@
         </div>
         
         <div class="taikaiid">
-            <p><h:outputText value="会員ID 10101010"/></p>
+            <h:form>
+                <p><h:outputText value="会員No #{taikaiBean.no}"/></p>
+            </h:form>
         </div>
         
         <div>
@@ -55,6 +57,6 @@
             <f:ajax execute="@this" render="@all"/>
         </h:commandButton>
         
-        <h:commandButton value="確定" action="" styleClass="square_btnff" 
+        <h:commandButton value="確定" action="#{taikaiBb.delete()}" styleClass="square_btnfff" /> 
     </h:body>
 </html>
