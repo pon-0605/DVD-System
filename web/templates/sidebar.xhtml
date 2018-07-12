@@ -14,7 +14,7 @@
             <div class="sidebar"> 
                 <h:form>
                     <p id="kihon" class="kihon">
-                        <h:commandLink value="基本" id="btn1" styleClass="square_btn"/>
+                        <a href="#" id="btn1" Class="square_btn">基本</a>
                         <h:commandLink value="入会" action="#{taikaiBean.next()}" id="btn2" styleClass="square_btn"/>
                         <h:commandLink value="退会" action="#{taikaiBean.next()}" id="btn3" styleClass="square_btn"/>
                         <h:commandLink value="貸出" action="#{taikaiBean.next()}" id="btn4" styleClass="square_btn"/>
@@ -24,7 +24,7 @@
                     </p>
                 
                     <p id="change" class="change"> 
-                        <h:commandLink value="更新" action="#{taikaiBean.next()}" id="btnk1" class="square_btn"/>       
+                        <a href="#"  id="btnk1" class="square_btn">更新</a>       
                         <h:commandLink value="会員更新" action="#{taikaiBean.next()}" id="btnk2" class="square_btn"/>       
                         <h:commandLink value="作品情報更新" action="#{taikaiBean.next()}" id="btnk3" class="square_btn"/>       
                         <h:commandLink value="在庫検索" action="#{taikaiBean.next()}" id="btnk4" class="square_btn"/>       
@@ -34,7 +34,7 @@
                     </p>
                 
                     <p id="role" class="role">
-                        <h:commandLink value="権限" action="#{taikaiBean.next()}" id="btnr1" class="square_btn"/>  
+                        <a href="#" id="btnr1" class="square_btn">権限</a>  
                         <h:commandLink value="ブラック会員一覧" action="#{taikaiBean.next()}" id="btnr2" class="square_btn"/>  
                         <h:commandLink value="不良メディア" action="#{taikaiBean.next()}" id="btnr3" class="square_btn"/>  
                         <h:commandLink value="権限付与" action="#{taikaiBean.next()}" id="btnr4" class="square_btn"/>  

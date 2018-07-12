@@ -20,6 +20,7 @@ public class HenkyakuBb {
     
     public String next(){
         return "templates/henkyaku.xhtml";
+
     }
 
     public List<HenkyakuBean> getHenkyakubean() {
