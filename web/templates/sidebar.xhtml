@@ -19,7 +19,7 @@
                         <h:commandLink value="退会" action="#{taikaiBean.next()}" id="btn3" styleClass="square_btn"/>
                         <h:commandLink value="貸出" action="#{taikaiBean.next()}" id="btn4" styleClass="square_btn"/>
                         <h:commandLink value="返却" action="#{henkyakuBb.next()}" id="btn5" styleClass="square_btn"/>
-                        <h:commandLink value="レジ" action="#{taikaiBean.next()}" id="btn6" styleClass="square_btn"/>
+                        <h:commandLink value="レジ" action="#{rejisimetopBean.next()}" id="btn6" styleClass="square_btn"/>
                         <a href="#" id="btn7" class="square_btn">切り替え更新へ</a>
                     </p>
                 
@@ -103,10 +103,8 @@
                 });
              });
          });
-       */
-               
-            </script>
-            
+       */          
+            </script>        
         </ui:composition> 
     </h:body>
 </html>

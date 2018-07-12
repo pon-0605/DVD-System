@@ -27,7 +27,7 @@ public class HenkyakuBean {
         this.Rank = Rank;
         this.Henkyakubi = Henkyakubi;
     }
-
+    
     public Integer getNo() {
         return No;
     }

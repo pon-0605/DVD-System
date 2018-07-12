@@ -13,11 +13,11 @@ public class VideoDb {
     private EntityManager em;
     
     public void create() {
-        em.persist();
+        //em.persist();
     }
     
     public void update() {
-        em.merge();
+        //em.merge();
     }
     
     public void delete(Taikai taikai) {
