@@ -6,6 +6,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 
+
 public class HenkyakuBean {
     private Integer No;
     private String Title;   //タイトル
@@ -98,8 +99,8 @@ public class HenkyakuBean {
     public void setOturi(Integer Oturi) {
         this.Oturi = Oturi;
     }
-    
-    
-    
-    
 }
+    
+    
+    
+
