@@ -596,11 +596,6 @@ input[type="submit"]{
     background-color: #2c3742;
 }
 
-thead tr th{
-    text-align: center;
-    border: none;
-}
-
 .comp-c1, .comp-c2{
     text-align: center;
     padding: 3px;

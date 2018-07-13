@@ -12,7 +12,7 @@ public class RejisimetopBean {
     }
     
     public String next1() {
-        return null;
+        return "/templates/tyukan.xhtml";
     }
     
     public String next2() {
