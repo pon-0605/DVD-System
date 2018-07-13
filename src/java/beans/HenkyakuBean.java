@@ -5,8 +5,8 @@ import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
-@Named
-@RequestScoped
+
+
 public class HenkyakuBean {
     private Integer No;
     private String Title;   //タイトル
@@ -17,6 +17,7 @@ public class HenkyakuBean {
     private Integer Eryoukin;   //延滞料金
     private Integer Azukari;    //預金
     private Integer Oturi;      //おつり
+    private boolean edidata;    //編集可能判定
    
     public HenkyakuBean(){
     }
@@ -99,5 +100,17 @@ public class HenkyakuBean {
     public void setOturi(Integer Oturi) {
         this.Oturi = Oturi;
     }
+
+    public boolean isEdidata() {
+        return edidata;
+    }
+
+    public void setEdidata(boolean edidata) {
+        this.edidata = edidata;
+    }
+    
       
 }
+    
+    
+    

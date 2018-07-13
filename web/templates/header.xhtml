@@ -29,15 +29,11 @@
                     <ul class="title">貸出し</ul>
                  
                     
-                    <ul class="login-ifno">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span><i class="glyphicon glyphicon-user"></i>アカウント情報</span></a>
-                        <ul class="dropdown-menu animated fadeInUp">
-                            <li>ユーザ：#{loginSession.userId}</li>
-                            <li>ロール：#{loginSession.role}</li>
-                            <li><a href="Logout"><i class="glyphicon glyphicon-log-out"></i>Logout</a></li>
-                        </ul>
-                    </ul>
+                    <div class="login-ifno">
+                            <ui>役職：#{loginSession.role}</ui>
+                            <ui>#{loginSession.userId} : #{loginSession.userName}</ui>
+                            <a href="Logout"><i class="glyphicon glyphicon-log-out"></i>Logout</a>
+                    </div>
                 </div>
             </div>
         </ui:composition> 

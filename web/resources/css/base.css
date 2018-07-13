@@ -6,6 +6,15 @@ body {
     padding: 0px;
 }
 
+table.tableif{
+     position: absolute;
+     left: 0px;
+     top: 170px;
+     width:800px;
+     height: 375px;
+  }
+
+
 /* headerデザイン */
 .header{
     position: relative;
@@ -89,17 +98,111 @@ body {
 .role {
     display: none;
 }
+/*スキャンtable*/
+/* 外枠部分 */
+div.y_data_area {
+  position: absolute;
+  left: 2px;
+  top: 160px;
+  width: 800px;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  border-left: 1px solid #CCC;
+}
+ 
+/* タイトル部分 */
+table.y_data_title {
+  width: 800px;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0; /* tableのcellspacing="0"の代わり */
+}
+ 
+table.y_data_title th {
+  border-top: 1px solid #CCC;
+  background: #EEF1F4;
+}
+ 
+table.y_data_title th,
+table.y_data_title td {
+  text-align: center;
+  padding: 2px;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+}
+ 
+table.y_data_title th.r_none,
+table.y_data_title td.r_none {
+  border-right: none; /* 右ボーダーの重なりを防止 */
+}
+ 
+/* データ部分 */
+div.y_scroll_box {
+  width: 800px;
+  max-height: 320px;
+  height: auto !important; /* IE6 max-height対応 */
+  height: 320px;/* IE6 max-height対応 */
+  overflow-x: hidden; /* 横スクロール非表示 */
+  overflow-y: scroll; /* 縦スクロール */
+}
+ 
+div.y_hidden {
+  overflow: hidden; /* IE系でデータ部分のテーブルをドラッグした際のズレを防止 */
+  padding: 0 0 10px; /* スクロール仕切った際の下ボーダーの重なりを防止 */
+}
+ 
+table.y_data {
+  width: 800px;
+  border-collapse: separate;
+  border-spacing: 0; /* tableのcellspacing="0"の代わり */
+  table-layout: fixed;
+}
+ 
+table.y_data th,
+table.y_data td {
+  padding: 2px;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+}
+ 
+table.y_data td {
+  overflow: hidden; /* データが幅を超えたとき非表示に */
+  white-space: nowrap; /* データの折り返しを防止 */
+}
+ 
+table.y_data td p {
+  margin: 0; /* 余分なマージンを消去 */
+}
+ 
+/* IE6 */
+table.y_data_title,
+table.y_data {
+  _border-collapse: collapse; /* IE6がborder-spacing: 0;に対応していないので */
+}
+ 
+/* IE7 */
+*:first-child+html table.y_data_title,
+*:first-child+html table.y_data {
+  border-collapse: collapse; /* IE7がborder-spacing: 0;に対応していないので */
+}
 
-/* informationデザイン */
+/* membermenuデザイン */
 table.memberif{
      position: relative;
      width:700px;
      height: 80px;
      background-color: #ffffff;
   }
+  table.memberif th{
+      text-align: center;
+  }
+  table.memberif td{
+      text-align: center;
+      border: none;
+  }
   .membername{
       position: absolute;
-      font-size: 21px; 
+      font-size: 18px; 
       top: 90px;
       left: 200px;
   }
@@ -119,6 +222,15 @@ table.memberif{
       
   }
   
+.box1 th{
+       text-align: center;
+  }
+  
+ .box1 td {
+       border:none;
+       text-align: center;
+}
+
 .square_btnf{
     position: relative;
     top: 22px;
@@ -162,6 +274,258 @@ table.memberif{
 .login-wrapper .btn {
     margin: 20px 10px 10px;
 }
+/*個数計*/
+  .kei{
+      display: inline-block;
+      position: absolute;
+      top: 500px;
+      left: 410px;
+      
+  }
+
+.kosu {
+    display: inline-block;
+      width: 90px;
+      height: 30px;
+      padding: 0.5em 1em;
+      margin: 2em 0;
+      font-weight: bold;
+      border: solid 0.5px;
+  }
+
+  
+  .kosu.kazu{
+      font-size: 16px;
+      
+  }
+  
+  /*金額計*/
+   .keikin{
+      display: inline-block;
+      position: absolute;
+      top: 500px;
+      left: 570px;
+      
+  }
+
+.kin {
+    display: inline-block;
+      width: 186px;
+      height: 30px;
+      padding: 0.5em 1em;
+      margin: 2em 0;
+      font-weight: bold;
+      border: solid 0.5px;
+  }
+
+  
+  .keikin kane{
+      font-size: 16px;
+      text-align: right;
+  }
+
+  
+    /*おつり*/
+   .keiazu{
+      display: inline-block;
+      position: absolute;
+      top: 545px;
+      left: 585px;
+      
+  }
+
+.azu {
+    display: inline-block;
+      width: 186px;
+      height: 30px;
+      padding: 0.5em 1em;
+      margin: 2em 0;
+      font-weight: bold;
+      border: solid 0.5px;
+  }
+
+  
+  .keikin az{
+      font-size: 16px;
+      text-align: right;
+  }
+
+/*確定ボタン*/
+.square_btnka{
+    position: relative;
+    top: 540px;
+    left: 280px;
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #FFF;/*ボタン色*/
+    color: #000000;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    font-size: 16px;
+    
+}
+.square_btnka:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
+
+/*クリアボタン*/
+.square_btnclear{
+    position: relative;
+    top: 540px;
+    left: 290px;
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #FFF;/*ボタン色*/
+    color: #000000;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    font-size: 16px;
+    
+}
+.square_btnclear:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
+
+/*当日ボタン*/
+.square_btn0{
+    position: absolute;
+    top: 180px;
+    left: 850px;
+    width: 140px;
+    height: 60px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #FFF;/*ボタン色*/
+    color: #000000;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    font-size: 16px;
+    
+}
+.square_btn0:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
+
+/*1泊2日ボタン*/
+.square_btn1{
+    position: absolute;
+    top: 180px;
+    left: 1040px;
+    width: 140px;
+    height: 60px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #FFF;/*ボタン色*/
+    color: #000000;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    font-size: 16px;
+    
+}
+.square_btn1:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
+
+/*2泊3日ボタン*/
+.square_btn2{
+    position: absolute;
+    top: 270px;
+    left: 850px;
+    width: 140px;
+    height: 60px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #FFF;/*ボタン色*/
+    color: #000000;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    font-size: 16px;
+    
+}
+.square_btn2:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
+
+/*7泊8日ボタン*/
+.square_btn3{
+    position: absolute;
+    top: 270px;
+    left: 1040px;
+    width: 140px;
+    height: 60px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #FFF;/*ボタン色*/
+    color: #000000;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    font-size: 16px;
+    
+}
+.square_btn3:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
+
+/*2泊3日ボタン*/
+.square_btn4{
+    position: absolute;
+    top: 370px;
+    left: 850px;
+    width: 140px;
+    height: 60px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #FFF;/*ボタン色*/
+    color: #000000;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    font-size: 16px;
+    
+}
+.square_btn4:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
+
+
 
 /* footerデザイン */
 footer{
@@ -234,6 +598,7 @@ input[type="submit"]{
 
 thead tr th{
     text-align: center;
+    border: none;
 }
 
 .comp-c1, .comp-c2{

@@ -1,31 +1,118 @@
-body {
-    
+
+
+.hd{
+    position:absolute; 
+    top:130px;
+    left: 50px;
 }
 
-.hd1{                   //1行目
+/*1行目*/
+.hd1{                 
     font-size: 25px;
     text-align: left;
     text-align:center;
 }
-.hd2{                   //No
+/*No*/
+.hd2{                   
     width: 100px;
-    font-size: 20px;
+    font-size: 25px;
 }
-.hd3{                   //タイトル
-    width: 150px;
-    font-size: 20px;
+/*タイトル*/
+.hd3{                   
+    width: 180px;
+    font-size: 25px;
 }
-.hd4{                   //ランク
+/*ランク*/
+.hd4{                   
     width: 100px;
-    font-size: 20px;
+    font-size: 25px;
 }
-.hd5{                   //返却予定日
+/*返却予定日*/
+.hd5{                   
     width: 100px;
-    font-size: 20px;
+    font-size: 25px;
+}
+/*databaseからの出力*/
+.hd6{                   
+    font-size: 25px;
 }
 
-.hd6{                   //databaseからの出力
-    font-size: 30px;
+.tr1{
+    padding: 10px; 
+    margin-bottom: 10px; 
+    border: 1px;
+}
+.div1{
+    font-size: 25px;
+}
+
+.td1{
+    width: 105px;
+}
+.td2{
+    width: 60px;
+}
+.td3{
+    width: 105px;
+}
+.td4{
+    width: 65px;
+}
+.td5{
+    width: 105px;
+}
+.td6{
+    width: 90px;
+}
+.td7{
+    width: 53px;
+}
+.td8{
+    width: 90px;
+}
+.td9{
+    width: 80px;
+}
+.td10{
+    width: 90px;
+}
+
+
+.tb1{
+    top:131px;
+    right: 530px;
+    position:absolute;
+    table-layout: fixed;
+
+}
+
+.tb2{
+    top:131px;
+    right: 249px;
+    position:absolute;
+    table-layout: fixed;
+}
+
+.tb3{
+    top:203px;
+    right: 500px;
+    position:absolute; 
+    table-layout: fixed;
+
+}
+
+.tb4{
+    top:278px;
+    right: 500px;
+    position:absolute;
+    table-layout: fixed;
+}
+
+.tb5{
+    top:278px;
+    right: 250px;
+    position:absolute;
+    table-layout: fixed;
 }
 
 

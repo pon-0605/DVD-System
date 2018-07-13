@@ -1,5 +1,4 @@
 package beans;
-
 import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
@@ -63,7 +62,4 @@ public class TaikaiBean implements Serializable{
     public void setName2(String name2) {
         this.name2 = name2;
     }
-    
-    
-
 }
