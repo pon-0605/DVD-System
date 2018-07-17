@@ -1,0 +1,107 @@
+body {
+
+}
+
+.main {
+    position: relative;
+    top: 50px;
+    left: 100px;
+    background-color: #FFF;
+    display:inline-block;
+    text-align: center;
+}
+
+.m1 {
+    width: 100px;
+    position: relative;
+    text-align: center;
+}
+
+.m2 {
+    width: 100px;
+}
+
+.m3 {
+    width: 100px;
+    position: relative;
+    text-align: center;
+}
+
+.goukei {
+    position: relative;
+    background-color: #FFF;
+    display:inline-block;
+    top: 80px;
+    left:100px;
+}
+
+.g1 {
+    width: 100px;
+    position: relative;
+    text-align: center;
+}
+
+.g2 {
+    width: 188px;
+    position: relative;
+    text-align: center;
+}
+
+.g3 {
+    width: 100px;
+    position: relative;
+    text-align: center;
+}
+
+.yotei {
+    background-color: #FFF;
+    display:inline-block;
+    position: relative;
+    top: 110px;
+    left: -294px;
+}
+
+.y1 {
+    width: 100px;
+    position: relative;
+    text-align: center;
+}
+
+.y2 {
+    width: 188px;
+    position: relative;
+    text-align: center;
+}
+
+.y3 {
+    width: 100px;
+    position: relative;
+    text-align: center;
+}
+
+.sagaku {
+    background-color: #FFF;
+    display:inline-block;
+    position: relative;
+    top: 140px;
+    left: -688px;
+    
+}
+
+.s1 {
+    width: 100px;
+    position: relative;
+    text-align: center;
+}
+
+.s2 {
+    width: 188px;
+    position: relative;
+    text-align: center;
+}
+
+.s3 {
+    width: 100px;
+    position: relative;
+    text-align: center;
+}
