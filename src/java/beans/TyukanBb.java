@@ -1,11 +1,13 @@
 package beans;
 
+import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Named;
 
 @Named
-@RequestScoped
-public class TyukanBb {
+@ViewScoped
+public class TyukanBb implements Serializable {
     
     private String money1; //10000
     private String money2; //5000

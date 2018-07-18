@@ -17,5 +17,6 @@ public class Frameborder extends JFrame {
         EtchedBorder border = new EtchedBorder(EtchedBorder.RAISED, Color.white, Color.black);
         label2.setBorder(border);
 
+        
     }
 }
