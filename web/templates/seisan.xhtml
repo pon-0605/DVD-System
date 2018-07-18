@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>清算〆</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/taikai.css"/>
+        <h:outputStylesheet name="bootstrap/css/bootstrap.min.css" />
+        <h:outputStylesheet library="css" name="base.css" />
+        <h:outputStylesheet library="css" name="tyukan.css"/>
+        <h:outputScript library="js" name="jquery-3.2.0.min.js" />
+        <h:outputScript name="bootstrap/js/bootstrap.min.js" />
+    </h:head>
+    <h:body>
+        <div id="top">
+            <ui:insert name="top">
+                <ui:include src="/templates/header.xhtml"/>
+            </ui:insert>
+        </div>
+        
+        <div id="sidebar">
+            <ui:insert name="sidebar">
+                <ui:include src="/templates/sidebar.xhtml"/>
+            </ui:insert>
+        </div>
+        
+        <div id="main">
+            <h:form>
+                <h:panelGrid columns="3" cellspacing="0" border="2" rules="all" columnClasses="m1,m2,m3">
+                
+                    <h:column><h:outputText value="金種" /></h:column>
+                    <h:column><h:outputText value="枚数" /></h:column>
+                    <h:column></h:column>
+                
+                    <h:outputText value="10000"/><h:inputText/> 枚
+                    <h:outputText value="5000"/><h:inputText/> 枚
+                    <h:outputText value="2000"/><h:inputText/> 枚
+                    <h:outputText value="1000"/><h:inputText/> 枚
+                    <h:outputText value="500"/><h:inputText/> 枚
+                    <h:outputText value="100"/><h:inputText/> 枚
+                    <h:outputText value="50"/><h:inputText/>枚
+                    <h:outputText value="10"/><h:inputText/> 枚
+                    <h:outputText value="5"/><h:inputText/> 枚
+                    <h:outputText value="1"/><h:inputText/> 枚
+                </h:panelGrid>
+            
+                </h:form>
+        </div>
+                <h:panelGrid columns="3" cellspacing="0" border="2" rules="all" columnClasses="m1,m2,m3">
+                    <h:outputText value="合計" /><h:inputText/>円
+                </h:panelGrid>
+                <h:panelGrid columns="3" cellspacing="0" border="2" rules="all" columnClasses="m1,m2,m3">
+                    <h:outputText value="予定金額" /><h:inputText/>円
+                </h:panelGrid>
+                <h:panelGrid columns="3" cellspacing="0" border="2" rules="all" columnClasses="m1,m2,m3">
+                    <h:outputText value="差額" /><h:inputText/>円
+                </h:panelGrid>
+                <h:panelGrid columns="3" cellspacing="0" border="2" rules="all" columnClasses="m1,m2,m3">
+                    <h:outputText value="雑益/雑損" /><h:inputText/>円
+                </h:panelGrid>
+                
+        
+        <h:commandButton value="クリア" action="#{taikaiBean.clear()}" styleClass="square_btnff">
+            <f:ajax execute="@this" render="@all"/>
+        </h:commandButton>
+
+        <h:commandButton value="確定" action="#{taikaiBb.delete()}" styleClass="square_btnfff" />
+        
+    </h:body>
+</html>
