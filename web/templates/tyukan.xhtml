@@ -31,42 +31,52 @@
             </ui:insert>
         </div>
 
+        <!--入力欄-->
         <h:form>
             <h:panelGrid columns="3" cellspacing="0" rules="all" styleClass="main" columnClasses="m1,m2,m3">
                 <h:column><h:outputText value="金種"/></h:column>
                 <h:column><h:outputText value="枚数"/></h:column>
                 <h:column></h:column>
-                <h:outputText value="10000"/> <h:inputText value="#{tyukanBean.money1}"/> <h:outputText value="枚"/>
-                <h:outputText value="5000"/> <h:inputText value="#{tyukanBean.money2}"/> <h:outputText value="枚"/>
-                <h:outputText value="2000"/> <h:inputText value="#{tyukanBean.money3}"/> <h:outputText value="枚"/>
-                <h:outputText value="1000"/> <h:inputText value="#{tyukanBean.money4}"/> <h:outputText value="枚"/>
-                <h:outputText value="500"/> <h:inputText value="#{tyukanBean.money5}"/> <h:outputText value="枚"/>
-                <h:outputText value="100"/> <h:inputText value="#{tyukanBean.money6}"/> <h:outputText value="枚"/>
-                <h:outputText value="50"/> <h:inputText value="#{tyukanBean.money7}"/> <h:outputText value="枚"/>
-                <h:outputText value="10"/> <h:inputText value="#{tyukanBean.money8}"/> <h:outputText value="枚"/>
-                <h:outputText value="5"/> <h:inputText value="#{tyukanBean.money9}"/> <h:outputText value="枚"/>
-                <h:outputText value="1"/> <h:inputText value="#{tyukanBean.money10}"/> <h:outputText value="枚"/>
+                <h:outputText value="10000"/> <h:inputText autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money1}"/> <h:outputText value="枚"/>
+                <h:outputText value="5000"/> <h:inputText autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money2}"/> <h:outputText value="枚"/>
+                <h:outputText value="2000"/> <h:inputText autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money3}"/> <h:outputText value="枚"/>
+                <h:outputText value="1000"/> <h:inputText autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money4}"/> <h:outputText value="枚"/>
+                <h:outputText value="500"/> <h:inputText autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money5}"/> <h:outputText value="枚"/>
+                <h:outputText value="100"/> <h:inputText autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money6}"/> <h:outputText value="枚"/>
+                <h:outputText value="50"/> <h:inputText autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money7}"/> <h:outputText value="枚"/>
+                <h:outputText value="10"/> <h:inputText autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money8}"/> <h:outputText value="枚"/>
+                <h:outputText value="5"/> <h:inputText autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money9}"/> <h:outputText value="枚"/>
+                <h:outputText value="1"/> <h:inputText autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money10}"/> <h:outputText value="枚"/>
             </h:panelGrid>
 
         </h:form>
-
+        
+        <!--合計額-->
         <h:panelGrid columns="3" cellpadding="0" rules="all" styleClass="goukei" columnClasses="g1,g2,g3">
-            <h:outputText value="合計"/> <h:outputText value=""/><h:outputText value="円"/>
-        </h:panelGrid>
+            <h:outputText value="合計"/>
+            <h:outputText value="#{tyukanBb.goukei}"/>
 
+            <h:outputText value="円"/>
+        </h:panelGrid>
+        
+        <!--予定額-->
         <h:panelGrid columns="3" cellpadding="0" rules="all" styleClass="yotei" columnClasses="y1, y2, y3">
             <h:outputText value="予定額"/> <h:outputText value=""/> <h:outputText value="円"/>
         </h:panelGrid>
-
+        
+        <!--差額-->
         <h:panelGrid columns="3" cellpadding="0" rules="all" styleClass="sagaku" columnClasses="s1,s2,s3">
             <h:outputText value="差額"/> <h:outputText value=""/><h:outputText value="円"/>
         </h:panelGrid>
 
-        <h:commandButton value="クリア" action="#{taikaiBean.clear()}" styleClass="square_btnff">
+        <h:commandButton value="クリア" action="#{tyukanBean.clear()}" styleClass="square_btnff">
             <f:ajax execute="@this" render="@all"/>
         </h:commandButton>
 
-        <h:commandButton value="確定" action="#{taikaiBb.delete()}" styleClass="square_btnfff" /> 
-
+        <h:form>
+            <h:commandButton id="kakutei" value="確定" action="#{}"styleClass="square_btnfff">
+                <f:ajax></f:ajax>
+            </h:commandButton>
+        </form>
     </h:body>
 </html>

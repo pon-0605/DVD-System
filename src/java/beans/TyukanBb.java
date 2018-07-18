@@ -3,46 +3,34 @@ package beans;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
-import javax.validation.constraints.Size;
-
 @Named
 @RequestScoped
-public class TyukanBean {
-
-    @Size(min = 0, max = 3)
+public class TyukanBb {
+    
     private String money1; //10000
-    @Size(min = 0, max = 3)
     private String money2; //5000
-    @Size(min = 0, max = 3)
     private String money3; //2000
-    @Size(min = 0, max = 3)
     private String money4; //1000
-    @Size(min = 0, max = 3)
     private String money5; //500
-    @Size(min = 0, max = 3)
     private String money6; //100
-    @Size(min = 0, max = 3)
     private String money7; //50
-    @Size(min = 0, max = 3)
     private String money8; //10
-    @Size(min = 0, max = 3)
     private String money9; //5
-    @Size(min = 0, max = 3)
-    private String money10; //1
-
-    public void clear() {
-
+    private String money10; //
+    
+    private int goukei; //合計額
+    
+   /* public TyukanBb() {
         this.money1 = null;
-        this.money2 = null;
-        this.money3 = null;
-        this.money4 = null;
-        this.money5 = null;
-        this.money6 = null;
-        this.money7 = null;
-        this.money8 = null;
-        this.money9 = null;
-        this.money10 = null;
-    }
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+    }*/
 
     public String getMoney1() {
         return money1;
@@ -124,5 +112,20 @@ public class TyukanBean {
         this.money10 = money10;
     }
 
+    public int getGoukei() {
+        return goukei;
+    }
+
+    public void setGoukei(int goukei) {
+        this.goukei = goukei;
+    }
+    
+    
+    
+    //合計額を求める
+    public int goukei() {
+        goukei = (Integer.parseInt(this.money1)) + (Integer.parseInt(this.money2));
+        return goukei;
+    }
     
 }
