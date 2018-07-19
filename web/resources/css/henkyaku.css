@@ -45,74 +45,111 @@
 .div1{
     font-size: 25px;
 }
-
+/*延滞日数*/
 .td1{
     width: 105px;
 }
+/*延滞日数内容*/
 .td2{
     width: 60px;
 }
+/*延滞本数*/
 .td3{
     width: 105px;
 }
+/*延滞本数内容*/
 .td4{
     width: 65px;
 }
+/*延滞料金*/
 .td5{
     width: 105px;
 }
+/*延滞料金内容*/
 .td6{
-    width: 90px;
+    width: 105px;
 }
+/*預金*/
 .td7{
     width: 53px;
 }
+/*預金内容*/
 .td8{
-    width: 90px;
+    width: 105px;
 }
+/*おつり*/
 .td9{
     width: 80px;
 }
+/*おつり内容*/
 .td10{
     width: 90px;
 }
 
-
+/*延滞日数位置*/
 .tb1{
     top:131px;
-    right: 530px;
+    right: 449px;
     position:absolute;
     table-layout: fixed;
 
 }
 
+/*延滞本数位置*/
 .tb2{
     top:131px;
-    right: 249px;
+    right: 199px;
     position:absolute;
     table-layout: fixed;
 }
 
+/*延滞料金位置*/
 .tb3{
     top:203px;
-    right: 500px;
+    right: 404px;
     position:absolute; 
     table-layout: fixed;
 
 }
 
+/*預金位置*/
 .tb4{
     top:278px;
-    right: 500px;
+    right: 404px;
     position:absolute;
     table-layout: fixed;
 }
 
+/*おつり位置*/
 .tb5{
     top:278px;
+    right: 199px;
+    position:absolute;
+    table-layout: fixed;
+}
+
+.cbtn{
+    width: 105px;
+    font-size:30px;
+     top: 350px;
+     right: 410px;
+    position:absolute;
+    table-layout: fixed;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    
+}
+
+.ebtn{
+    width: 105px;
+    font-size:30px;
+    top: 350px;
     right: 250px;
     position:absolute;
     table-layout: fixed;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
 }
-
-

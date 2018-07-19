@@ -3,9 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      >
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
     <h:head>
         <title>中間〆</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -37,36 +37,100 @@
                 <h:column><h:outputText value="金種"/></h:column>
                 <h:column><h:outputText value="枚数"/></h:column>
                 <h:column></h:column>
-                <h:outputText value="10000"/> <h:inputText id="m1" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money1}"/> <h:outputText value="枚"/>
-                <h:outputText value="5000"/> <h:inputText id="m2" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money2}"/> <h:outputText value="枚"/>
-                <h:outputText value="2000"/> <h:inputText id="m3" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money3}"/> <h:outputText value="枚"/>
-                <h:outputText value="1000"/> <h:inputText id="m4" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money4}"/> <h:outputText value="枚"/>
-                <h:outputText value="500"/> <h:inputText id="m5" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money5}"/> <h:outputText value="枚"/>
-                <h:outputText value="100"/> <h:inputText id="m6" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money6}"/> <h:outputText value="枚"/>
-                <h:outputText value="50"/> <h:inputText id="m7" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money7}"/> <h:outputText value="枚"/>
-                <h:outputText value="10"/> <h:inputText id="m8" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money8}"/> <h:outputText value="枚"/>
-                <h:outputText value="5"/> <h:inputText id="m9" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money9}"/> <h:outputText value="枚"/>
-                <h:outputText value="1"/> <h:inputText id="m10" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money10}"/> <h:outputText value="枚"/>
+
+                <h:outputText value="10000"/> 
+                <h:inputText id="money1" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money1}">
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.goukeiKeisan()}" render="goukei2"/>
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.sagakuKeisan()}" render="yotei2"/>
+                </h:inputText>
+                <h:outputText value="枚"/>
+
+                <h:outputText value="5000"/>
+                <h:inputText id="money2" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money2}">
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.goukeiKeisan()}" render="goukei2"/>
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.sagakuKeisan()}" render="yotei2"/>
+                </h:inputText>
+                <h:outputText value="枚"/>
+
+                <h:outputText value="2000"/>
+                <h:inputText id="money3" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money3}">
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.goukeiKeisan()}" render="goukei2"/>
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.sagakuKeisan()}" render="yotei2"/>
+                </h:inputText>
+                <h:outputText value="枚"/>
+
+                <h:outputText value="1000"/> 
+                <h:inputText id="money4" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money4}"> 
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.goukeiKeisan()}" render="goukei2"/>
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.sagakuKeisan()}" render="yotei2"/>
+                </h:inputText>
+                <h:outputText value="枚"/>
+
+                <h:outputText value="500"/>
+                <h:inputText id="money5" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money5}"> 
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.goukeiKeisan()}" render="goukei2"/>
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.sagakuKeisan()}" render="yotei2"/>
+                </h:inputText>
+                <h:outputText value="枚"/>
+
+                <h:outputText value="100"/> 
+                <h:inputText id="money6" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money6}">
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.goukeiKeisan()}" render="goukei2"/>
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.sagakuKeisan()}" render="yotei2"/>
+                </h:inputText>
+                <h:outputText value="枚"/>
+
+                <h:outputText value="50"/>
+                <h:inputText id="money7" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money7}">
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.goukeiKeisan()}" render="goukei2"/>
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.sagakuKeisan()}" render="yotei2"/>
+                </h:inputText>
+                <h:outputText value="枚"/>
+
+                <h:outputText value="10"/>
+                <h:inputText id="money8" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money8}"> 
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.goukeiKeisan()}" render="goukei2"/>
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.sagakuKeisan()}" render="yotei2"/>
+                </h:inputText>
+                <h:outputText value="枚"/>
+
+                <h:outputText value="5"/> 
+                <h:inputText id="money9" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money9}">
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.goukeiKeisan()}" render="goukei2"/>
+                <f:ajax event="change" execute="@form" listener="#{tyukanBean.sagakuKeisan()}" render="yotei2"/>
+                </h:inputText>
+                <h:outputText value="枚"/>
+
+                <h:outputText value="1"/> 
+                <h:inputText id="money10" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-9]+/i, '')" value="#{tyukanBean.money10}"> 
+                    <f:ajax event="change" execute="@form" listener="#{tyukanBean.goukeiKeisan()}" render="goukei2"/>
+                    <f:ajax event="change" execute="@form" listener="#{tyukanBean.sagakuKeisan()}" render="yotei2"/>
+                </h:inputText>
+                <h:outputText value="枚"/>
+
             </h:panelGrid>
 
         </h:form>
-        
+
         <!--合計額-->
         <h:panelGrid columns="3" cellpadding="0" rules="all" styleClass="goukei" columnClasses="g1,g2,g3">
             <h:outputText value="合計"/>
-            <h:outputText value="#{tyukanBb.goukei}"/>
-
+            <h:outputText id="goukei2" value="#{tyukanBean.goukei}"/>
             <h:outputText value="円"/>
         </h:panelGrid>
-        
+
         <!--予定額-->
         <h:panelGrid columns="3" cellpadding="0" rules="all" styleClass="yotei" columnClasses="y1, y2, y3">
-            <h:outputText value="予定額"/> <h:outputText value=""/> <h:outputText value="円"/>
+            <h:outputText value="予定額"/> 
+            <h:outputText value=""/> 
+            <h:outputText value="円"/>
         </h:panelGrid>
-        
+
         <!--差額-->
         <h:panelGrid columns="3" cellpadding="0" rules="all" styleClass="sagaku" columnClasses="s1,s2,s3">
-            <h:outputText value="差額"/> <h:outputText value=""/><h:outputText value="円"/>
+            <h:outputText value="差額"/> 
+            <h:outputText id="yotei2" value="#{tyukanBean.sagaku}" />
+            <h:outputText value="円"/>
         </h:panelGrid>
 
         <h:commandButton value="クリア" action="#{tyukanBean.clear()}" styleClass="square_btnff">
@@ -74,8 +138,8 @@
         </h:commandButton>
 
         <h:form>
-            <h:commandButton id="kakutei" value="確定" action="#{}"styleClass="square_btnfff">
-                <f:ajax event="click" execute="m1 m2"></f:ajax>
+            <h:commandButton id="kakutei" value="確定" styleClass="square_btnfff">
+                
             </h:commandButton>
         </h:form>
     </h:body>
