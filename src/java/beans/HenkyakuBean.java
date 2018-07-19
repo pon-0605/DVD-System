@@ -6,14 +6,15 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 
-
+@Named
+@RequestScoped
 public class HenkyakuBean {
     private Integer No;
     private String Title;   //タイトル
     private String Rank;    
     private String Henkyakubi;  //返却予定日
-    private Integer Enissu;     //延滞日数
-    private Integer Ehonsu;     //延滞本数
+    private Integer Enissu = 10;     //延滞日数
+    private Integer Ehonsu = 4;     //延滞本数
     private Integer Eryoukin;   //延滞料金
     private Integer Azukari;    //預金
     private Integer Oturi;      //おつり
@@ -78,6 +79,7 @@ public class HenkyakuBean {
     }
 
     public Integer getEryoukin() {
+        Eryoukin = Ehonsu * Enissu *300;
         return Eryoukin;
     }
 
