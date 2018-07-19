@@ -9,25 +9,15 @@ import javax.validation.constraints.Size;
 @RequestScoped
 public class TyukanBean {
 
-    @Size(min = 0, max = 3)
     private String money1; //10000
-    @Size(min = 0, max = 3)
     private String money2; //5000
-    @Size(min = 0, max = 3)
     private String money3; //2000
-    @Size(min = 0, max = 3)
     private String money4; //1000
-    @Size(min = 0, max = 3)
     private String money5; //500
-    @Size(min = 0, max = 3)
     private String money6; //100
-    @Size(min = 0, max = 3)
     private String money7; //50
-    @Size(min = 0, max = 3)
     private String money8; //10
-    @Size(min = 0, max = 3)
     private String money9; //5
-    @Size(min = 0, max = 3)
     private String money10; //1
 
     public void clear() {
