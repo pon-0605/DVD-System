@@ -63,13 +63,13 @@
             <table border="1" class="tb1">
                 <div>
                     <td class="td1">延滞日数</td>
-                    <td class="td2">10</td>
+                    <td class="td2">#{henkyakuBean.enissu}</td>
                 </div>
             </table>
             <table border="1" class="tb2">
                 <div>
                     <td class="td3">延滞本数</td>
-                    <td class="td4">2</td>
+                    <td class="td4">#{henkyakuBean.ehonsu}</td>
                 </div>
             </table>
         </tr>
@@ -77,7 +77,7 @@
             <table border="1" class="tb3">
                 <div>
                     <td class="td5">延滞料金</td>
-                    <td class="td6">1,200</td>
+                    <td class="td6">#{henkyakuBean.eryoukin}</td>
                 </div>
             </table>
         </tr>
@@ -85,13 +85,13 @@
             <table border="1" class="tb4">
                 <div>
                     <td class="td7">預金</td>
-                    <td class="td8">10,000</td>
+                    <td id="td8"><h:inputText class="inazuk" value="#{henkyakuBean.setAzukari(Azukari)}"/></td>
                 </div>
             </table>
             <table border="1" class="tb5">
                 <div>
                     <td class="td9">おつり</td>
-                    <td class="td10">8,800</td>
+                    <td class="td10">#{henkyakuBean.oturi}</td>
                 </div>
             </table>
         </tr>

@@ -77,6 +77,11 @@
 .td8{
     width: 105px;
 }
+/*預金入力テキスト*/
+input.inazuk{
+    width: 105px;
+    background-color: #D7EEFF;
+}
 /*おつり*/
 .td9{
     width: 80px;
