@@ -1,16 +1,19 @@
 package beans;
 
+import db.VideoDb;
+import entity.Tyukan;
+import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import javax.validation.constraints.Size;
 
 @Named
 @RequestScoped
-public class TyukanBean{
+public class TyukanBean {
 
-    
-    private int money1 ; //10000 
-    private int money2 ; //5000
+    private Tyukan tyukan;
+
+    private int money1; //10000 
+    private int money2; //5000
     private int money3; //2000
     private int money4; //100
     private int money5; //500
@@ -24,22 +27,9 @@ public class TyukanBean{
     private int yotei; //予定額
     private int sagaku; //差額
     
-    public TyukanBean(){}
-    
-    public TyukanBean(int money1, int money2, int money3, int money4, int money5, int money6, int money7,
-            int money8, int money9, int money10) {
-        this.money1 = money1;
-        this.money2 = money2;
-        this.money3 = money3;
-        this.money4 = money4;
-        this.money5 = money5;
-        this.money6 = money6;
-        this.money7 = money7;
-        this.money8 = money8;
-        this.money9 = money9;
-        this.money10 = money10;
-    }
-    
+    @EJB
+    VideoDb db;
+
     public int getMoney1() {
         return money1;
     }
@@ -143,22 +133,26 @@ public class TyukanBean{
     public void setSagaku(int sagaku) {
         this.sagaku = sagaku;
     }
-    
+
     //合計額を求める
     public int goukeiKeisan() {
-        goukei = ((money1*10000) + (money2*5000) + (money3*2000) + (money4*1000) + (money5*500) + (money6*100)
-                + (money7*50) + (money8*10) + (money9*5) + (money10*1));
+        goukei = ((money1 * 10000) + (money2 * 5000) + (money3 * 2000) + (money4 * 1000) + (money5 * 500) + (money6 * 100)
+                + (money7 * 50) + (money8 * 10) + (money9 * 5) + (money10 * 1));
         this.setGoukei(goukei);
         return 0;
     }
-    
+
     //差額を求める
     public int sagakuKeisan() {
         sagaku = goukei - yotei;
         this.setYotei(yotei);
         return 0;
     }
-    
+
+    public String create() {
+        return null;
+    }
+
     //クリアボタン押下
     public void clear() {
         this.money1 = 0;
