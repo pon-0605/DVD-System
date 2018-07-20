@@ -19,6 +19,23 @@ public class SeisanBean {
     private int money9; //5
     private int money10; //1
     private int goukei; //合計額
+    private int yotei; //予定額
+    private int sagaku; //差額
+    private int zatuez; //雑損益
+    
+    public void SeisanBean(int money1, int money2, int money3, int money4, int money5, int money6, int money7,
+            int money8, int money9, int money10) {
+        this.money1 = money1;
+        this.money2 = money2;
+        this.money3 = money3;
+        this.money4 = money4;
+        this.money5 = money5;
+        this.money6 = money6;
+        this.money7 = money7;
+        this.money8 = money8;
+        this.money9 = money9;
+        this.money10 = money10;
+    }
     
     public void clear() {
 
@@ -121,13 +138,49 @@ public class SeisanBean {
     public void setGoukei(int goukei) {
         this.goukei = goukei;
     }
-    
-    
-    
-    //合計額を求める
-    public int goukei() {
-        goukei = 9;
-        return goukei;
+
+    public int getYotei() {
+        return yotei;
+    }
+
+    public void setYotei(int yotei) {
+        this.yotei = yotei;
+    }
+
+    public int getSagaku() {
+        return sagaku;
+    }
+
+    public void setSagaku(int sagaku) {
+        this.sagaku = sagaku;
+    }
+
+    public int getZatuez() {
+        return zatuez;
+    }
+
+    public void setZatuez(int zatuez) {
+        this.zatuez = zatuez;
     }
     
+    //合計額を求める
+    public int goukeiKeisan() {
+        goukei = ((money1*10000) + (money2*5000) + (money3*2000) + (money4*1000) + (money5*500) + (money6*100)
+                + (money7*50) + (money8*10) + (money9*5) + (money10*1));
+        this.setGoukei(goukei);
+        return 0;
+    }
+    
+    //差額を求める
+    public int sagakuKeisan() {
+        sagaku = goukei - yotei;
+        this.setYotei(yotei);
+        return 0;
+    }
+   
+    public int zatusonekiKeisan() {
+        zatuez = zatuez + sagaku;
+        this.setZatuez(zatuez);
+        return 0;
+    }
 }
