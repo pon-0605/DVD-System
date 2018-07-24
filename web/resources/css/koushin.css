@@ -2,3 +2,225 @@ body {
     
 }
 
+.no {
+    top: 100px;
+    left: 700px;
+    background-color: #FFF;
+    display: inline-table;
+    border-color: #000000;
+    position: absolute;
+    text-align: center;
+}
+
+.n1 {
+    width: 100px;
+    padding: 1px;
+}
+
+.n2 {
+    width: 300px;
+}
+
+.name {
+    top: 100px;
+    left: 30px;
+    background-color: #FFF;
+    display: inline-table;
+    border-color: #000000;
+    position: absolute;
+    text-align: center;
+  
+}
+
+.name1 {
+    width: 100px;
+    padding: 1px;
+}
+
+.name2 {
+    width: 300px;
+}
+
+.name4 {
+    height: 40px;
+}
+
+.birthday {
+    top: 175px;
+    left: 30px;
+    background-color: #FFF;
+    display: inline-table;
+    border-color: #000000;
+    position: absolute;
+    text-align: center;
+}
+
+.birthday1 {
+    height: 30px;
+    width: 100px;
+    padding: 1px;
+}
+
+.birthday2 {
+    width:300px;
+}
+
+.age {
+    top: 215px;
+    left: 30px;
+    background-color: #FFF;
+    display: inline-table;
+    border-color: #000000;
+    position: absolute;
+    text-align: center;
+}
+
+.age1 {
+    height: 30px;
+    width: 100px;
+    padding: 1px;
+}
+
+.age2 {
+    width: 300px;
+}
+
+.adress {
+    top: 255px;
+    left: 30px;
+    background-color: #FFF;
+    display: inline-table;
+    border-color: #000000;
+    position: absolute;
+    text-align: center;
+}
+
+.adress1 {
+    width: 100px;
+    padding: 1px;
+}
+
+.adress2 {
+    width: 700px;
+}
+
+.adress4 {
+    height: 40px;
+}
+
+.tel {
+    top: 350px;
+    left: 30px;
+    background-color: #FFF;
+    display: inline-table;
+    border-color: #000000;
+    position: absolute;
+    text-align: center;
+}
+
+.tel1 {
+    height: 30px;
+    width: 100px;
+    padding: 1px;
+}
+
+.tel2 {
+    width: 300px;
+}
+
+.e-mail {
+    top: 390px;
+    left: 30px;
+    background-color: #FFF;
+    display: inline-table;
+    border-color: #000000;
+    position: absolute;
+    text-align: center;
+}
+
+.e-mail1 {
+    height: 30px;
+    width: 100px;
+    padding: 1px;
+}
+
+.e-mail2 {
+    width: 500px;
+}
+
+.profession {
+    top: 430px;
+    left: 30px;
+    background-color: #FFF;
+    display: inline-table;
+    border-color: #000000;
+    position: absolute;
+    text-align: center;
+}
+
+.profession1 {
+    height: 30px;
+    width: 100px;
+    padding: 1px;
+}
+
+.profession2 {
+    width: 150px;
+}
+
+.pro {
+    width: 150px;
+    text;
+}
+
+.check {
+    top: 470px;
+    left: 30px;
+    border: solid 1px;
+    padding: 0.5em 1em;
+    position: absolute;
+    background-color: #FFF;
+    display: inline-table;
+}
+
+.square_btnff{
+    position: absolute;
+    top: 540px;
+    left: 30px;
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #FFF;/*ボタン色*/
+    color: #000000;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    font-size: 16px;
+    
+}
+
+.square_btnfff{
+    position: absolute;
+    top: 540px;
+    left: 150px;
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #FFF;/*ボタン色*/
+    color: #000000;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    font-size: 16px;
+    
+}
+
+.square_btnff:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
