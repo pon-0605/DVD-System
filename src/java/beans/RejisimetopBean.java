@@ -16,6 +16,6 @@ public class RejisimetopBean {
     }
     
     public String next2() {
-        return null;
+        return "/templates/seisan.xhtml";
     }
 }

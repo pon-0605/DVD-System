@@ -1,34 +1,38 @@
 package beans;
 
-import db.VideoDb;
-import entity.Tyukan;
-import javax.ejb.EJB;
+import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Named;
 
 @Named
-@RequestScoped
-public class TyukanBean {
-
-    private Tyukan tyukan;
-
-    private int money1; //10000 
-    private int money2; //5000
-    private int money3; //2000
-    private int money4; //100
-    private int money5; //500
-    private int money6; //100
-    private int money7; //50
-    private int money8; //10
-    private int money9; //5
-    private int money10; //1
+@ViewScoped
+public class SeisanBb implements Serializable {
+    
+        private int money1; //10000
+        private int money2; //5000
+        private int money3; //2000
+        private int money4; //1000
+        private int money5; //500
+        private int money6; //100    
+        private int money7; //50
+        private int money8; //10
+        private int money9; //5
+        private int money10; //1
 
     private int goukei; //合計額
-    private int yotei; //予定額
-    private int sagaku; //差額
     
-    @EJB
-    VideoDb db;
+   /* public TyukanBb() {
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+        this.money1 = null;
+    }*/
 
     public int getMoney1() {
         return money1;
@@ -110,6 +114,8 @@ public class TyukanBean {
         this.money10 = money10;
     }
 
+    
+
     public int getGoukei() {
         return goukei;
     }
@@ -117,54 +123,13 @@ public class TyukanBean {
     public void setGoukei(int goukei) {
         this.goukei = goukei;
     }
-
-    public int getYotei() {
-        return yotei;
-    }
-
-    public void setYotei(int yotei) {
-        this.yotei = yotei;
-    }
-
-    public int getSagaku() {
-        return sagaku;
-    }
-
-    public void setSagaku(int sagaku) {
-        this.sagaku = sagaku;
-    }
-
+    
+    
+    
     //合計額を求める
-    public int goukeiKeisan() {
-        goukei = ((money1 * 10000) + (money2 * 5000) + (money3 * 2000) + (money4 * 1000) + (money5 * 500) + (money6 * 100)
-                + (money7 * 50) + (money8 * 10) + (money9 * 5) + (money10 * 1));
-        this.setGoukei(goukei);
-        return 0;
+    public int goukei() {
+        goukei = 9;
+        return goukei;
     }
-
-    //差額を求める
-    public int sagakuKeisan() {
-        sagaku = goukei - yotei;
-        this.setYotei(yotei);
-        return 0;
-    }
-
-    public String create() {
-        return null;
-    }
-
-    //クリアボタン押下
-    public void clear() {
-        this.money1 = 0;
-        this.money2 = 0;
-        this.money3 = 0;
-        this.money4 = 0;
-        this.money5 = 0;
-        this.money6 = 0;
-        this.money7 = 0;
-        this.money8 = 0;
-        this.money9 = 0;
-        this.money10 = 0;
-        
-    }
+    
 }
