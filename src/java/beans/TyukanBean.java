@@ -165,5 +165,6 @@ public class TyukanBean {
         this.money8 = 0;
         this.money9 = 0;
         this.money10 = 0;
+        
     }
 }
