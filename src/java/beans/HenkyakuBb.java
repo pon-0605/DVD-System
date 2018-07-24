@@ -18,10 +18,14 @@ public class HenkyakuBb {
         henkyakuBean.add(new HenkyakuBean(4,"ハーミデーター","新作","2018/6/30"));
     }
     
+    public void clear1(){
+        this.henkyakuBean.removeAll(henkyakuBean);
+    }
+    
     public String next(){
         return "templates/henkyaku.xhtml";
     }
-
+    
     public List<HenkyakuBean> getHenkyakubean() {
         return henkyakuBean;
     }

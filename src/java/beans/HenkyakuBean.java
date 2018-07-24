@@ -1,22 +1,25 @@
 package beans;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 
 @Named
 @RequestScoped
-public class HenkyakuBean {
+public class HenkyakuBean implements Serializable{
+    @Inject
+    HenkyakuBb henkyakuBb;
+    
     private Integer No;
     private String Title;   //タイトル
     private String Rank;    
     private String Henkyakubi;  //返却予定日
     private Integer Enissu = 10;     //延滞日数
     private Integer Ehonsu = 4;     //延滞本数
-    private Integer Eryoukin;   //延滞料金
-    private Integer Azukari;    //預金
+    private Integer Eryoukin = 12000;   //延滞料金
+    private Integer Azukari = 14000;    //預金
     private Integer Oturi;      //おつり
     private boolean edidata;    //編集可能判定
    
@@ -28,6 +31,12 @@ public class HenkyakuBean {
         this.Title = Title;
         this.Rank = Rank;
         this.Henkyakubi = Henkyakubi;
+    }
+    
+    public HenkyakuBean(Integer Eryoukin,Integer Azukari,Integer Oturi){
+        this.Eryoukin = Eryoukin;
+        this.Azukari = Azukari;
+        this.Oturi = Oturi;
     }
     
     public Integer getNo() {
@@ -79,7 +88,7 @@ public class HenkyakuBean {
     }
 
     public Integer getEryoukin() {
-        Eryoukin = Ehonsu * Enissu *300;
+        Eryoukin = Ehonsu * (Enissu *300);
         return Eryoukin;
     }
 
@@ -111,6 +120,22 @@ public class HenkyakuBean {
         this.edidata = edidata;
     }
     
+    public void clear(){
+        this.No=0;
+        this.Title="";
+        this.Rank="";
+        this.Henkyakubi="";
+        this.Enissu=0;
+        this.Ehonsu=0;
+        this.Eryoukin=0;
+        this.Azukari=0;
+        this.Oturi=0;
+        henkyakuBb.clear1();
+    }
+    public Integer turikeisan(){
+        Oturi =  Enissu + Ehonsu;
+        return Oturi;
+    }
       
 }
     
