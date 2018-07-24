@@ -2,11 +2,10 @@ package beans;
 
 import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.bean.ViewScoped;
 import javax.inject.Named;
 
 @Named
-@ViewScoped
+@RequestScoped
 public class SeisanBb implements Serializable {
     
         private int money1; //10000
