@@ -1,6 +1,7 @@
 package db;
 
 import entity.Taikai;
+import entity.Tyukan;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -12,8 +13,8 @@ public class VideoDb {
     @PersistenceContext
     private EntityManager em;
     
-    public void create() {
-        //em.persist(tyukan);
+    public void create(Tyukan tyukan) {
+        em.persist(tyukan);
     }
     
     public void update() {

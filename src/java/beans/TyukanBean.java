@@ -1,16 +1,18 @@
 package beans;
 
+
 import db.VideoDb;
 import entity.Tyukan;
+import java.util.Date;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Named
 @RequestScoped
 public class TyukanBean {
-
-    private Tyukan tyukan;
 
     private int money1; //10000 
     private int money2; //5000
@@ -23,13 +25,18 @@ public class TyukanBean {
     private int money9; //5
     private int money10; //1
 
-    private int goukei; //合計額
-    private int yotei; //予定額
-    private int sagaku; //差額
+    private int earnings; //合計額
+    private int planned_amount; //予定額
+    private int profit_loss; //差額
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date datec; //日付
+    private String cash_number = "130001A";//レジ番号
+    private String store_code = "9701001";//店舗Code
     
     @EJB
     VideoDb db;
-
+    
     public int getMoney1() {
         return money1;
     }
@@ -110,49 +117,86 @@ public class TyukanBean {
         this.money10 = money10;
     }
 
-    public int getGoukei() {
-        return goukei;
+    public int getEarnings() {
+        return earnings;
     }
 
-    public void setGoukei(int goukei) {
-        this.goukei = goukei;
+    public void setEarnings(int earnings) {
+        this.earnings = earnings;
     }
 
-    public int getYotei() {
-        return yotei;
+    public int getPlanned_amount() {
+        return planned_amount;
     }
 
-    public void setYotei(int yotei) {
-        this.yotei = yotei;
+    public void setPlanned_amount(int planned_amount) {
+        this.planned_amount = planned_amount;
     }
 
-    public int getSagaku() {
-        return sagaku;
+    public int getProfit_loss() {
+        return profit_loss;
     }
 
-    public void setSagaku(int sagaku) {
-        this.sagaku = sagaku;
+    public void setProfit_loss(int profit_loss) {
+        this.profit_loss = profit_loss;
     }
 
+    public Date getDatec() {
+        return datec;
+    }
+
+    public void setDatec(Date datec) {
+        this.datec = datec;
+    }
+
+    public String getCash_number() {
+        return cash_number;
+    }
+
+    public void setCash_number(String cash_number) {
+        this.cash_number = cash_number;
+    }
+
+    public String getStore_code() {
+        return store_code;
+    }
+
+    public void setStore_code(String store_code) {
+        this.store_code = store_code;
+    }
+    
     //合計額を求める
     public int goukeiKeisan() {
-        goukei = ((money1 * 10000) + (money2 * 5000) + (money3 * 2000) + (money4 * 1000) + (money5 * 500) + (money6 * 100)
+        earnings = ((money1 * 10000) + (money2 * 5000) + (money3 * 2000) + (money4 * 1000) + (money5 * 500) + (money6 * 100)
                 + (money7 * 50) + (money8 * 10) + (money9 * 5) + (money10 * 1));
-        this.setGoukei(goukei);
+        this.setEarnings(earnings);
         return 0;
     }
 
     //差額を求める
     public int sagakuKeisan() {
-        sagaku = goukei - yotei;
-        this.setYotei(yotei);
+        profit_loss = earnings - planned_amount;
+        this.setPlanned_amount(planned_amount);
         return 0;
     }
-
-    public String create() {
+    
+    public Date getTime(Date datec) {
+        datec = new Date();
+        this.setDatec(datec);
         return null;
     }
-
+    
+    public void create() {
+        this.getTime(datec);
+        Tyukan ty = new Tyukan(datec, cash_number, store_code, profit_loss, earnings, planned_amount);
+       
+        try {
+            db.create(ty);
+        }catch(Exception e) {
+            System.out.print("はいだめーーーー");
+        }
+    }
+    
     //クリアボタン押下
     public void clear() {
         this.money1 = 0;
