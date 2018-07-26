@@ -18,8 +18,8 @@ public class HenkyakuBean implements Serializable{
     private String Henkyakubi;  //返却予定日
     private Integer Enissu = 10;     //延滞日数
     private Integer Ehonsu = 4;     //延滞本数
-    private Integer Eryoukin = 12000;   //延滞料金
-    private Integer Azukari = 14000;    //預金
+    private Integer Eryoukin ;   //延滞料金
+    private Integer Azukari  ;   //預金
     private Integer Oturi;      //おつり
     private boolean edidata;    //編集可能判定
    

@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -14,6 +15,16 @@
         <h:outputScript name="bootstrap/js/bootstrap.min.js"/>
         <title>返却画面</title>
         <h:outputStylesheet library="css" name="henkyaku.css"/>
+        
+        <script type="text/javascript">
+            function keisan(){
+                var num0 = document.getElementById('inazuk1').innerHTML; //延滞料金
+                var num1 = document.getElementById('inazuk2').value; //預かり
+                var ans =parseInt(num1) - parseInt(num0);
+                
+                document.getElementById('inazuk3').innerHTML = ans; //おつり出力
+            }
+        </script>
 
     </h:head>
     <h:body>
@@ -74,21 +85,19 @@
                 <h:form class="tb3">
                     <h:panelGrid border="1" columns="2" columnClasses="td5,td6" >
                         延滞料金
-                        <h:outputText id="inazuk1" value="#{henkyakuBean.eryoukin}"/>
+                        <h:outputText p:id="inazuk1"  value="#{henkyakuBean.eryoukin}"/>
                     </h:panelGrid>
                 </h:form>
                 <div class="tb4">
                     <h:panelGrid border="1" columns="2" columnClasses="td7,td8" >
                         預金
-                        <h:inputText class="inazuk" id="inazuk2" value="#{henkyakuBean.azukari}">
-                            <f:ajax event="change" listener="#{henkyakuBean.setAzukari(izanuk2)}"/>
-                        </h:inputText>
+                        <h:inputText class="inazuk" p:id="inazuk2" value="#{henkyakuBean.azukari}" onchange="keisan()"/>
                     </h:panelGrid>
-                </div>>
+                </div>
                 <div class="tb5">
                     <h:panelGrid border="1" columns="2" columnClasses="td9,td10" >
                         おつり
-                        <h:outputText id="inazuk3" value="#{henkyakuBean.oturi}"/>
+                        <h:outputText p:id="inazuk3" value="#{henkyakuBean.oturi}"/>
                     </h:panelGrid>
                 </div>
             </div>
@@ -96,10 +105,8 @@
             <h:commandButton value="クリア" type="button" action="#{henkyakuBean.clear()}" class="cbtn" >
                 <f:ajax execute="@this" render="@all"/>
             </h:commandButton>
-            <h:commandButton value="確定" type="button" class="ebtn">
-                <f:ajax event="click" listener="#{henkyakuBean.turikeisan()}" execute="inazuk2 inazuk1" />
-            </h:commandButton>
+            <h:commandButton value="確定" type="button" class="ebtn"/>
         </h:form>
-
+        
     </h:body>
 </html>
