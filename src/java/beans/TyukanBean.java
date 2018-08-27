@@ -1,6 +1,5 @@
 package beans;
 
-
 import db.VideoDb;
 import entity.Tyukan;
 import java.util.Date;
@@ -25,7 +24,7 @@ public class TyukanBean {
     private int money9; //5
     private int money10; //1
 
-    private int earnings; //合計額
+    private static int earnings; //合計額
     private int planned_amount; //予定額
     private int profit_loss; //差額
 
@@ -170,6 +169,7 @@ public class TyukanBean {
         earnings = ((money1 * 10000) + (money2 * 5000) + (money3 * 2000) + (money4 * 1000) + (money5 * 500) + (money6 * 100)
                 + (money7 * 50) + (money8 * 10) + (money9 * 5) + (money10 * 1));
         this.setEarnings(earnings);
+        
         return 0;
     }
 
@@ -188,6 +188,7 @@ public class TyukanBean {
     
     public void create() {
         this.getTime(datec);
+        this.sagakuKeisan();
         Tyukan ty = new Tyukan(datec, cash_number, store_code, profit_loss, earnings, planned_amount);
        
         try {
@@ -197,7 +198,12 @@ public class TyukanBean {
         }
     }
     
+    public String find() {
+        
+    }
+    
     //クリアボタン押下
+    
     public void clear() {
         this.money1 = 0;
         this.money2 = 0;
@@ -209,6 +215,6 @@ public class TyukanBean {
         this.money8 = 0;
         this.money9 = 0;
         this.money10 = 0;
-        
+       
     }
 }

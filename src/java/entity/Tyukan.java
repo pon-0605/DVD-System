@@ -59,7 +59,8 @@ public class Tyukan implements Serializable{
         this.money9 = money9;
         this.money10 = money10;
     }
-
+    
+    
     public Tyukan(Date datec, String cash_number, String store_code, int profit_loss, int earnings, int planned_amount) {
         this.earnings = earnings;
         this.planned_amount = planned_amount;
@@ -68,7 +69,7 @@ public class Tyukan implements Serializable{
         this.cash_number = cash_number;
         this.store_code = store_code;
     }
-
+    
     public int getMoney1() {
         return money1;
     }

@@ -139,13 +139,10 @@
 
         <h:form>
             <h:commandButton id="kakutei" value="確定" styleClass="square_btnfff">
-                <f:ajax event="click" execute="@this" listener="#{tyukanBean.create()}"/>
+                <f:ajax event="click" execute="@form" listener="#{tyukanBean.create()}"/>
             </h:commandButton>
         </h:form>
         
-        <h:form class="">
-            
-        </h:form>
         <script>
                 var elem = document.getElementById("test");
                 elem.textContent = "中間";
