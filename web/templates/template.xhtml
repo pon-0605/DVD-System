@@ -12,6 +12,7 @@
         <h:outputStylesheet library="css" name="base.css"/>
         <h:outputScript library="js" name="jquery-3.2.0.min.js"/>
         <h:outputScript name="bootstrap/js/bootstrap.min.js"/>
+        <h:outputScript library="js" name="gamen.js" />
         <title><ui:insert name="title"/></title>
     </h:head>
 
@@ -21,16 +22,16 @@
                 <ui:include src="/templates/header.xhtml"/>
             </ui:insert>
         </div>
-        
+
         <div id="sidebar">
             <ui:insert name="sidebar">
                 <ui:include src="/templates/sidebar.xhtml"/>
             </ui:insert>
         </div>
-        
+
         <div id="content" class="center_content">
             <ui:insert name="content">Content</ui:insert>
         </div>
-        
+
     </h:body>
 </html>

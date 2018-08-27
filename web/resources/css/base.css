@@ -1,18 +1,25 @@
+html{
+    height: 100%;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #D7EEFF;
     position: relative;
     margin: 0px;
     padding: 0px;
+    box-sizing:border-box;
+    overflow: hidden;
+    height: 100%;
 }
 
 table.tableif{
-     position: absolute;
-     left: 0px;
-     top: 170px;
-     width:800px;
-     height: 375px;
-  }
+    position: absolute;
+    left: 0px;
+    top: 170px;
+    width:800px;
+    height: 375px;
+}
 
 
 /* headerデザイン */
@@ -64,7 +71,7 @@ table.tableif{
     position:relative; 
     float:right; 
     width: 140px;
-    height: 90vh;
+    height: 100vh;
     background-color:#BBBBBB;
     overflow:hidden;
 }
@@ -101,134 +108,134 @@ table.tableif{
 /*スキャンtable*/
 /* 外枠部分 */
 div.y_data_area {
-  position: absolute;
-  left: 2px;
-  top: 160px;
-  width: 800px;
-  border-right: 1px solid #CCC;
-  border-bottom: 1px solid #CCC;
-  border-left: 1px solid #CCC;
+    position: absolute;
+    left: 2px;
+    top: 160px;
+    width: 800px;
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    border-left: 1px solid #CCC;
 }
- 
+
 /* タイトル部分 */
 table.y_data_title {
-  width: 800px;
-  table-layout: fixed;
-  border-collapse: separate;
-  border-spacing: 0; /* tableのcellspacing="0"の代わり */
+    width: 800px;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0; /* tableのcellspacing="0"の代わり */
 }
- 
+
 table.y_data_title th {
-  border-top: 1px solid #CCC;
-  background: #EEF1F4;
+    border-top: 1px solid #CCC;
+    background: #EEF1F4;
 }
- 
+
 table.y_data_title th,
 table.y_data_title td {
-  text-align: center;
-  padding: 2px;
-  border-right: 1px solid #CCC;
-  border-bottom: 1px solid #CCC;
+    text-align: center;
+    padding: 2px;
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
 }
- 
+
 table.y_data_title th.r_none,
 table.y_data_title td.r_none {
-  border-right: none; /* 右ボーダーの重なりを防止 */
+    border-right: none; /* 右ボーダーの重なりを防止 */
 }
- 
+
 /* データ部分 */
 div.y_scroll_box {
-  width: 800px;
-  max-height: 320px;
-  height: auto !important; /* IE6 max-height対応 */
-  height: 320px;/* IE6 max-height対応 */
-  overflow-x: hidden; /* 横スクロール非表示 */
-  overflow-y: scroll; /* 縦スクロール */
+    width: 800px;
+    max-height: 320px;
+    height: auto !important; /* IE6 max-height対応 */
+    height: 320px;/* IE6 max-height対応 */
+    overflow-x: hidden; /* 横スクロール非表示 */
+    overflow-y: scroll; /* 縦スクロール */
 }
- 
+
 div.y_hidden {
-  overflow: hidden; /* IE系でデータ部分のテーブルをドラッグした際のズレを防止 */
-  padding: 0 0 10px; /* スクロール仕切った際の下ボーダーの重なりを防止 */
+    overflow: hidden; /* IE系でデータ部分のテーブルをドラッグした際のズレを防止 */
+    padding: 0 0 10px; /* スクロール仕切った際の下ボーダーの重なりを防止 */
 }
- 
+
 table.y_data {
-  width: 800px;
-  border-collapse: separate;
-  border-spacing: 0; /* tableのcellspacing="0"の代わり */
-  table-layout: fixed;
+    width: 800px;
+    border-collapse: separate;
+    border-spacing: 0; /* tableのcellspacing="0"の代わり */
+    table-layout: fixed;
 }
- 
+
 table.y_data th,
 table.y_data td {
-  padding: 2px;
-  border-right: 1px solid #CCC;
-  border-bottom: 1px solid #CCC;
+    padding: 2px;
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
 }
- 
+
 table.y_data td {
-  overflow: hidden; /* データが幅を超えたとき非表示に */
-  white-space: nowrap; /* データの折り返しを防止 */
+    overflow: hidden; /* データが幅を超えたとき非表示に */
+    white-space: nowrap; /* データの折り返しを防止 */
 }
- 
+
 table.y_data td p {
-  margin: 0; /* 余分なマージンを消去 */
+    margin: 0; /* 余分なマージンを消去 */
 }
- 
+
 /* IE6 */
 table.y_data_title,
 table.y_data {
-  _border-collapse: collapse; /* IE6がborder-spacing: 0;に対応していないので */
+    _border-collapse: collapse; /* IE6がborder-spacing: 0;に対応していないので */
 }
- 
+
 /* IE7 */
 *:first-child+html table.y_data_title,
 *:first-child+html table.y_data {
-  border-collapse: collapse; /* IE7がborder-spacing: 0;に対応していないので */
+    border-collapse: collapse; /* IE7がborder-spacing: 0;に対応していないので */
 }
 
 /* membermenuデザイン */
 table.memberif{
-     position: relative;
-     width:700px;
-     height: 80px;
-     background-color: #ffffff;
-  }
-  table.memberif th{
-      text-align: center;
-  }
-  table.memberif td{
-      text-align: center;
-      border: none;
-  }
-  .membername{
-      position: absolute;
-      font-size: 18px; 
-      top: 90px;
-      left: 200px;
-  }
-  
-  .box1 {
-      position: absolute;
-      top: 64px;
-      left: 15px;
-      padding: 0.5em 1em;
-      margin: 2em 0;
-      font-weight: bold;
-      border: solid 3px #000000;
-  }
-  
-  .box1.memberno{
-      font-size: 16px;
-      
-  }
-  
+    position: relative;
+    width:700px;
+    height: 80px;
+    background-color: #ffffff;
+}
+table.memberif th{
+    text-align: center;
+}
+table.memberif td{
+    //text-align: center;
+    border: none;
+}
+.membername{
+    position: absolute;
+    font-size: 18px; 
+    top: 90px;
+    left: 200px;
+}
+
+.box1 {
+    position: absolute;
+    top: 64px;
+    left: 15px;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px #000000;
+}
+
+.box1.memberno{
+    font-size: 16px;
+
+}
+
 .box1 th{
-       text-align: center;
-  }
-  
- .box1 td {
-       border:none;
-       text-align: center;
+    text-align: center;
+}
+
+.box1 td {
+    border:none;
+    text-align: center;
 }
 
 .square_btnf{
@@ -245,7 +252,7 @@ table.memberif{
     border-bottom: solid 4px #627295;
     border-radius: 3px;
     font-size: 16px;
-    
+
 }
 .square_btnf:active {/*ボタンを押したとき*/
     -ms-transform: translateY(4px);
@@ -275,86 +282,111 @@ table.memberif{
     margin: 20px 10px 10px;
 }
 /*個数計*/
-  .kei{
-      display: inline-block;
-      position: absolute;
-      top: 500px;
-      left: 410px;
-      
-  }
+.kei{
+    display: inline-block;
+    position: absolute;
+    top: 510px;
+    left: 410px;
+
+}
 
 .kosu {
     display: inline-block;
-      width: 90px;
-      height: 30px;
-      padding: 0.5em 1em;
-      margin: 2em 0;
-      font-weight: bold;
-      border: solid 0.5px;
-  }
+    width: 90px;
+    height: 30px;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 0.5px;
+}
 
-  
-  .kosu.kazu{
-      font-size: 16px;
-      
-  }
-  
-  /*金額計*/
-   .keikin{
-      display: inline-block;
-      position: absolute;
-      top: 500px;
-      left: 570px;
-      
-  }
+
+.kosu.kazu{
+    font-size: 16px;
+
+}
+
+/*金額計*/
+.keikin{
+    display: inline-block;
+    position: absolute;
+    top: 510px;
+    left: 570px;
+
+}
 
 .kin {
     display: inline-block;
-      width: 186px;
-      height: 30px;
-      padding: 0.5em 1em;
-      margin: 2em 0;
-      font-weight: bold;
-      border: solid 0.5px;
-  }
+    width: 186px;
+    height: 30px;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 0.5px;
+}
 
-  
-  .keikin kane{
-      font-size: 16px;
-      text-align: right;
-  }
 
-  
-    /*おつり*/
-   .keiazu{
-      display: inline-block;
-      position: absolute;
-      top: 545px;
-      left: 585px;
-      
-  }
+.keikin kane{
+    font-size: 16px;
+    text-align: right;
+}
 
-.azu {
+/*預金*/
+.keiazu{
     display: inline-block;
-      width: 186px;
-      height: 30px;
-      padding: 0.5em 1em;
-      margin: 2em 0;
-      font-weight: bold;
-      border: solid 0.5px;
-  }
+    position: absolute;
+    top: 550px;
+    left: 584px;
 
-  
-  .keikin az{
-      font-size: 16px;
-      text-align: right;
-  }
+}
+
+.azu{
+    display: inline-block;
+    width: 186px;
+    height: 30px;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 0.5px;
+}
+
+
+.keiazu az{
+    font-size: 16px;
+    text-align: right;
+}
+
+
+/*おつり*/
+.oturi{
+    display: inline-block;
+    position: absolute;
+    top: 530px;
+    left: 880px;
+
+}
+
+.turi{
+    display: inline-block;
+    width: 210px;
+    height: 38px;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 0.5px;
+}
+
+
+.oturi tur{
+    font-size: 16px;
+    text-align: right;
+}
 
 /*確定ボタン*/
 .square_btnka{
-    position: relative;
-    top: 540px;
-    left: 280px;
+    position: absolute;
+    top: 560px;
+    left: 210px;
     width: 100px;
     height: 40px;
     display: inline-block;
@@ -365,7 +397,7 @@ table.memberif{
     border-bottom: solid 4px #627295;
     border-radius: 3px;
     font-size: 16px;
-    
+
 }
 .square_btnka:active {/*ボタンを押したとき*/
     -ms-transform: translateY(4px);
@@ -377,9 +409,9 @@ table.memberif{
 
 /*クリアボタン*/
 .square_btnclear{
-    position: relative;
-    top: 540px;
-    left: 290px;
+    position: absolute;
+    top: 560px;
+    left: 70px;
     width: 100px;
     height: 40px;
     display: inline-block;
@@ -390,7 +422,7 @@ table.memberif{
     border-bottom: solid 4px #627295;
     border-radius: 3px;
     font-size: 16px;
-    
+
 }
 .square_btnclear:active {/*ボタンを押したとき*/
     -ms-transform: translateY(4px);
@@ -415,7 +447,7 @@ table.memberif{
     border-bottom: solid 4px #627295;
     border-radius: 3px;
     font-size: 16px;
-    
+
 }
 .square_btn0:active {/*ボタンを押したとき*/
     -ms-transform: translateY(4px);
@@ -440,7 +472,7 @@ table.memberif{
     border-bottom: solid 4px #627295;
     border-radius: 3px;
     font-size: 16px;
-    
+
 }
 .square_btn1:active {/*ボタンを押したとき*/
     -ms-transform: translateY(4px);
@@ -465,7 +497,7 @@ table.memberif{
     border-bottom: solid 4px #627295;
     border-radius: 3px;
     font-size: 16px;
-    
+
 }
 .square_btn2:active {/*ボタンを押したとき*/
     -ms-transform: translateY(4px);
@@ -490,7 +522,7 @@ table.memberif{
     border-bottom: solid 4px #627295;
     border-radius: 3px;
     font-size: 16px;
-    
+
 }
 .square_btn3:active {/*ボタンを押したとき*/
     -ms-transform: translateY(4px);
@@ -515,7 +547,7 @@ table.memberif{
     border-bottom: solid 4px #627295;
     border-radius: 3px;
     font-size: 16px;
-    
+
 }
 .square_btn4:active {/*ボタンを押したとき*/
     -ms-transform: translateY(4px);
@@ -548,18 +580,18 @@ footer a{
 /* keyVisualデザイン */
 #keyVisual {
 
-	padding-top: 70px;
-	height: 350px;
-	background: url('images/kv_img.jpg') no-repeat;
-	background-size: cover;
+    padding-top: 70px;
+    height: 350px;
+    background: url('images/kv_img.jpg') no-repeat;
+    background-size: cover;
 }
 /* keyTextデザイン */
 #keyText {
-	font-family: Georgia;
-	font-style:italic;
-	font-size: 64px;
-	color: #2c3742;
-	float: left;
+    font-family: Georgia;
+    font-style:italic;
+    font-size: 64px;
+    color: #2c3742;
+    float: left;
 }
 
 #bottom{
