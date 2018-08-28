@@ -28,13 +28,16 @@
                 <ui:include src="/templates/sidebar.xhtml"/>
             </ui:insert>
         </div>
+        <div>
+        <h2>ブラック会員一覧</h2>
+        </div>
         
         <h:form>
-            <h2>ブラック会員一覧</h2>
+            <div class="black">
             <h:dataTable value="#{blackmemberBean.blackmember}" border="2" rules="all" var="bmb" styleClass="main" columnClasses="b1,b2,b3,b4,b5,b6,b7">
                 <h:column headerClass="hd2">
                     <f:facet name="header">会員名</f:facet>
-                    #{bmb.name}
+                    <h:commandLink action="#{blackdetailsBean.next()}">#{bmb.name}</h:commandLink>
                 </h:column>
                 <h:column headerClass="hd2">
                     <f:facet name="header">会員番号</f:facet>
@@ -62,7 +65,11 @@
                 </h:column>
             
         </h:dataTable>
+                </div>
             </h:form>
-        
+        <script>
+                var elem = document.getElementById("test");
+                elem.textContent = "ブラック会員";
+        </script>
     </h:body>
 </html>

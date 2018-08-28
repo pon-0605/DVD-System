@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <title>ブラック会員詳細</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="bootstrap/css/bootstrap.min.css" />
+        <h:outputStylesheet library="css" name="base.css" />
+        <h:outputStylesheet library="css" name="blackdetails.css"/>
+        <h:outputScript library="js" name="jquery-3.2.0.min.js" />
+        <h:outputScript name="bootstrap/js/bootstrap.min.js" />
+    </h:head>
+    <h:body>
+        <div id="top">
+            <ui:insert name="top">
+                <ui:include src="/templates/header.xhtml"/>
+            </ui:insert>
+        </div>
+
+        <div id="sidebar">
+            <ui:insert name="sidebar">
+                <ui:include src="/templates/sidebar.xhtml"/>
+            </ui:insert>
+        </div>
+        
+        <div>
+            <h:form class="name">
+                <h:panelGrid columns="2" border="2" cellspacing="0" rules="all" columnClasses="bd1,bd2">
+                    会員名    <h:outputText value="大森壮馬"/>
+                </h:panelGrid>
+            </h:form>
+        </div>
+        
+        <div>
+            <h:form class="number">
+                <h:panelGrid columns="2" border="2" cellspacing="0" rules="all" columnClasses="bd3,bd4">
+                    会員番号    <h:outputText value="18110964732"/>
+                </h:panelGrid>
+            </h:form>
+        </div>
+        
+        <div>
+            <h:form class="phon">
+                <h:panelGrid columns="2" border="2" cellspacing="0" rules="all" columnClasses="bd5,bd6">
+                    電話番号    <h:outputText value="080-xxxx-yyyy"/>
+                </h:panelGrid>
+            </h:form>
+        </div>
+        
+        <div>
+            <h:form class="kasi">
+                <h:panelGrid columns="2" border="2" cellspacing="0" rules="all" columnClasses="bd7,bd8">
+                    貸出回数    <h:outputText value="15"/>
+                </h:panelGrid>
+            </h:form>
+        </div>
+        
+        <div>
+            <h:form class="entai">
+                <h:panelGrid columns="2" border="2" cellspacing="0" rules="all" columnClasses="bd9,bd10">
+                    延滞回数    <h:outputText value="1回"/>
+                </h:panelGrid>
+            </h:form>
+        </div>
+        
+        <div>
+            <h:form class="henkyaku">
+                <h:panelGrid columns="2" border="2" cellspacing="0" rules="all" columnClasses="bd11,bd12">
+                    通常返却率    <h:outputText value="93%"/>
+                </h:panelGrid>
+            </h:form>
+        </div>
+        
+        <div>
+            <h3>履歴</h3>
+        </div>
+        
+        <h:form>
+            <div class="rireki">
+                <h:dataTable value="#{blackdetailsBean.details}" border="2" rules="all" var="bdb" styleClass="main" columnClasses="b1,b2,b3,b4">
+                    <h:column headerClass="hd1">
+                        <f:facet name="header">貸出日</f:facet>
+                        #{bdb.hiduke}
+                    </h:column>
+                    <h:column headerClass="hd1">
+                        <f:facet name="header">貸出本数</f:facet>
+                        #{bdb.kasihon}
+                    </h:column>
+                    <h:column headerClass="hd1">
+                        <f:facet name="header">返却済</f:facet>
+                        #{bdb.henzumi}
+                    </h:column>
+                    <h:column headerClass="hd1">
+                        <f:facet name="header">延滞</f:facet>
+                        #{bdb.entai}
+                    </h:column>
+                </h:dataTable>
+            </div>
+        </h:form>
+        
+        <h:form class="kome">
+            <h4>コメント編集</h4>
+            <h:inputText class="kmt"></h:inputText>
+        </h:form>
+        
+        <h:form class="kaijo">
+            <h5>ブラック会員解除</h5>
+            <h:outputText value="解除する" styleClass="btn" />
+        </h:form>
+        
+        <h:form class="back">
+            <h:commandLink value="戻る" action="#{blackmemberBean.next()}" styleClass="square_btn0" />
+        </h:form>
+        
+        
+    </h:body>
+</html>

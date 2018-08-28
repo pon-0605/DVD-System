@@ -2,15 +2,30 @@ body {
     
 }
 
-.main{
-    position: relative;
-    top: 50px;
+h2 {
+    position: absolute;
+    top: 55px;
     left: 140px;
-    max-height: 320px;
+    
+}
+
+div.black {
+    position: absolute;
+    top: 150px;
+    left: 80px;
+    width: 1000px;
+    max-height: 300px;
   height: auto !important; /* IE6 max-height対応 */
-  height: 320px;/* IE6 max-height対応 */
+  height: 80px;/* IE6 max-height対応 */
   overflow-x: hidden; /* 横スクロール非表示 */
   overflow-y: scroll; /* 縦スクロール */
+  border: 2px;
+}
+
+.main{
+    position: relative;
+    left: 60px;
+    
 }
 
 .hd2{
@@ -18,12 +33,6 @@ body {
     text-align: center;
 }
 
-h2 {
-    position: absolute;
-    top: 55px;
-    left: 140px;
-    
-}
 
 .b1 {
     width: 150px;

@@ -1,0 +1,171 @@
+body {
+    
+}
+
+.name{
+    position: absolute;
+    top: 100px;
+    left: 80px;
+}
+
+.number{
+    position: absolute;
+    top: 100px;
+    left: 400px;
+}
+
+.phon{
+    position: absolute;
+    top: 100px;
+    left: 800px;
+}
+
+.kasi{
+    position: absolute;
+    top: 180px;
+    left: 80px;
+}
+
+.entai{
+    position: absolute;
+    top: 180px;
+    left: 400px;
+}
+
+.henkyaku{
+    position: absolute;
+    top: 180px;
+    left: 800px;
+}
+
+.bd1 {
+    width: 80px;
+}
+
+.bd2 {
+    width: 200px;
+}
+
+.bd3 {
+    width: 80px;
+}
+
+.bd4 {
+    width: 270px;
+}
+
+.bd5 {
+    width: 80px;
+}
+
+.bd6 {
+    width: 180px;
+}
+
+.bd7 {
+    width: 80px;
+}
+
+.bd8 {
+    width: 60px;
+}
+
+.bd9 {
+    width: 80px;
+}
+
+.bd10 {
+    width: 60px;
+}
+
+.bd11 {
+    width: 80px;
+}
+
+.bd12 {
+    width: 60px;
+}
+
+h3 {
+    position: absolute;
+    top: 210px;
+    left: 80px;
+}
+
+div.rireki {
+    position: absolute;
+    top: 260px;
+    left: 80px;
+    width: 400px;
+    max-height: 300px;
+  height: auto !important; /* IE6 max-height対応 */
+  height: 80px;/* IE6 max-height対応 */
+  overflow-x: hidden; /* 横スクロール非表示 */
+  overflow-y: scroll; /* 縦スクロール */
+  border: 2px;
+}
+
+.main {
+    
+}
+
+.hd1{
+    height: 50px;
+    text-align: center;
+}
+
+.b1 {
+    width: 220px;
+    height: 30px;
+    text-align: center;
+}
+
+.b2 {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+}
+
+.b3 {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+}
+
+.b4 {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+}
+
+form.kome {
+    position: absolute;
+    top: 250px;
+    left: 550px;
+}
+
+.kmt {
+    height: 80px;
+    width: 400px;
+}
+
+form.kaijo {
+    position: absolute;
+    top: 400px;
+    left: 550px;
+}
+
+.btn {
+    background: #d9edf7;
+}
+
+.back {
+    position: relative;
+    top: 250px;
+    right: 300px;
+    text-align: center;
+}
+
+.square_btn0 {
+    background: buttonface;
+}
