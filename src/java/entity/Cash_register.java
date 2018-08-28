@@ -11,7 +11,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name="CASH_REGISTER")
-public class Tyukan implements Serializable{
+public class Cash_register implements Serializable{
    @Transient
     private int money1 ; //10000 
    @Transient
@@ -33,8 +33,9 @@ public class Tyukan implements Serializable{
    @Transient
     private int money10; //1
     
+   
     private int earnings; //合計額
-    private int planned_amount; //予定額
+    private int planned_amount; //予定
     private int profit_loss; //差額
     
     @Temporal(TemporalType.TIMESTAMP)
@@ -44,9 +45,9 @@ public class Tyukan implements Serializable{
     private String cash_number;//レジ番号
     private String store_code;//店舗Code
        
-    public Tyukan(){}
+    public Cash_register(){}
     
-    public Tyukan(int money1, int money2, int money3, int money4, int money5, int money6, int money7,
+    public Cash_register(int money1, int money2, int money3, int money4, int money5, int money6, int money7,
             int money8, int money9, int money10) {
         this.money1 = money1;
         this.money2 = money2;
@@ -61,7 +62,7 @@ public class Tyukan implements Serializable{
     }
     
     
-    public Tyukan(Date datec, String cash_number, String store_code, int profit_loss, int earnings, int planned_amount) {
+    public Cash_register(Date datec, String cash_number, String store_code, int profit_loss, int earnings, int planned_amount) {
         this.earnings = earnings;
         this.planned_amount = planned_amount;
         this.profit_loss = profit_loss;

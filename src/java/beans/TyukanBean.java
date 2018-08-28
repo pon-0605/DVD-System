@@ -1,7 +1,8 @@
 package beans;
 
 import db.VideoDb;
-import entity.Tyukan;
+import entity.Cash_register;
+import entity.Register_sales;
 import java.util.Date;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
@@ -30,7 +31,7 @@ public class TyukanBean {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date datec; //日付
-    private String cash_number = "130001A";//レジ番号
+    private String cash_number = "9701001B";//レジ番号
     private String store_code = "9701001";//店舗Code
     
     @EJB
@@ -189,19 +190,20 @@ public class TyukanBean {
     public void create() {
         this.getTime(datec);
         this.sagakuKeisan();
-        Tyukan ty = new Tyukan(datec, cash_number, store_code, profit_loss, earnings, planned_amount);
+        Cash_register ty = new Cash_register(datec, cash_number, store_code, profit_loss, earnings, planned_amount);
        
         try {
             db.create(ty);
+            db.find();
         }catch(Exception e) {
             System.out.print("はいだめーーーー");
         }
     }
-    
+    /*
     public String find() {
         
     }
-    
+    */
     //クリアボタン押下
     
     public void clear() {
