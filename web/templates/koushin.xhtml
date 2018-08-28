@@ -3,14 +3,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet name="bootstrap/css/bootstrap.min.css" />
         <h:outputStylesheet library="css" name="base.css" />
-        <h:outputStylesheet library="css" name="tyukan.css"/>
+        <h:outputStylesheet library="css" name="koushin.css"/>
         <h:outputScript library="js" name="jquery-3.2.0.min.js" />
         <h:outputScript name="bootstrap/js/bootstrap.min.js" />
     </h:head>
@@ -27,8 +28,73 @@
             </ui:insert>
         </div>
         
-        <h:form>
-            
+        <h:form class="no">
+            <h:panelGrid columns="2" border="2" cellpadding="0" rules="all" columnClasses="n1, n2">
+                会員No <h:outputText value="#{koushinBean.no}"/>
+            </h:panelGrid> 
         </h:form>
+
+        <h:form class="name">
+            <h:panelGrid columns="2" border="2" cellspacing="0" rules="all" columnClasses="name1,name2">
+                ふりがな <h:inputText value="#{koushinBean.name1}" size="35"/>
+                氏名    <h:inputText value="#{koushinBean.name2}" size="35"/>
+            </h:panelGrid> 
+        </h:form>
+
+        <h:form class="birthday">
+            <h:panelGrid columns="2" border="2" cellpadding="0" rules="all" columnClasses="birthday1,birthday2">
+                生年月日 <h:inputText value="知らん" size="35"/>
+            </h:panelGrid>  
+        </h:form>
+
+        <h:form class="age">
+            <h:panelGrid columns="2" border="2" cellpadding="0" rules="all" columnClasses="age1,age2">
+                年齢 <h:inputText value="#{koushinBean.age}歳" size="35"/>
+            </h:panelGrid>
+        </h:form>
+
+        <h:form class="adress">
+            <h:panelGrid columns="2" border="2" cellpadding="0" rules="all" columnClasses="adress1,adress2" rowClasses="adress3,adress4">
+                ふりがな<h:inputText value="#{koushinBean.address1}" size="100"/>
+                住所 <h:inputTextarea value="#{koushinBean.address2}" cols="100" rows="2"/>
+            </h:panelGrid>
+        </h:form>
+
+        <h:form class="tel">
+            <h:panelGrid columns="2" border="2" cellpadding="0" rules="all" columnClasses="tel1,tel2">
+                電話番号<h:outputText value="#{koushinBean.number}"/>
+            </h:panelGrid>
+        </h:form>
+
+        <h:form class="e-mail">
+            <h:panelGrid columns="2" border="2" cellpadding="0" rules="all" columnClasses="e-mail1,e-mail2">
+                e-mail<h:outputText value="#{koushinBean.mail}"/>
+            </h:panelGrid>
+        </h:form>
+
+        <h:form class="profession">
+            <h:panelGrid columns="2" border="2" cellpadding="0" rules="all" columnClasses="profession1,profession2">
+                ご職業 <h:selectOneMenu value="#{koushinBean.profession}" styleClass="pro">
+                    <f:selectItems value="#{koushinBean.items}"/>
+                </h:selectOneMenu>
+            </h:panelGrid>
+        </h:form>
+        
+        <h:form class="check">
+                <h:selectBooleanCheckbox value="#{taikaiBean.mail}" styleClass="inp"/>
+                退会確認<br/>
+        </h:form>
+        
+        <h:commandButton value="クリア" action="#{taikaiBean.clear()}" styleClass="square_btnff">
+            <f:ajax execute="@this" render="@all"/>
+        </h:commandButton>
+
+        <h:commandButton value="確定" action="#{taikaiBb.delete()}" styleClass="square_btnfff" />
+
+        <script>
+            var elem = document.getElementById("test");
+            elem.textContent = "会員更新";
+        </script>
+
     </h:body>
 </html>

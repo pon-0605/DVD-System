@@ -27,15 +27,15 @@ body {
   
 }
 
-.t1 {
-    width: 100px;
-    padding: 3px;
-}
+    .t1 {
+        width: 100px;
+        padding: 3px;
+    }
 
-.t2 {
-    width: 300px;
-    padding: 3px;
-}
+    .t2 {
+        width: 300px;
+        padding: 3px;
+    }
 
 .mail {
     border: solid 2px #000000;

@@ -115,7 +115,7 @@
         <!--合計額-->
         <h:panelGrid columns="3" cellpadding="0" rules="all" styleClass="goukei" columnClasses="g1,g2,g3">
             <h:outputText value="合計"/>
-            <h:outputText id="goukei2" value="#{tyukanBean.goukei}"/>
+            <h:outputText id="goukei2" value="#{tyukanBean.earnings}"/>
             <h:outputText value="円"/>
         </h:panelGrid>
 
@@ -129,7 +129,7 @@
         <!--差額-->
         <h:panelGrid columns="3" cellpadding="0" rules="all" styleClass="sagaku" columnClasses="s1,s2,s3">
             <h:outputText value="差額"/> 
-            <h:outputText id="yotei2" value="#{tyukanBean.sagaku}" />
+            <h:outputText id="yotei2" value="#{tyukanBean.profit_loss}" />
             <h:outputText value="円"/>
         </h:panelGrid>
 
@@ -139,7 +139,7 @@
 
         <h:form>
             <h:commandButton id="kakutei" value="確定" styleClass="square_btnfff">
-                
+                <f:ajax event="click" execute="@form" listener="#{tyukanBean.create()}"/>
             </h:commandButton>
         </h:form>
         

@@ -2,27 +2,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <head jsfc="h:head">
         <title>header</title>
         <link rel="stylesheet" type="text/css" href="/resources/css/mystyle.css"/>
     </head>
     <body>
-        <table class="memberif" border="1" align="right">
-            <tr>
-                <th>電話番号</th><th>性別</th><th>年齢</th><th>最終利用日</th><th>登録日</th><th>有効期限</th>
-            </tr>
-            <tr>
-                <td>011-831-5511</td><td>男</td><td>47</td><td>2018/6/4</td><td>2018/4/10</td><td>2019/4/10</td>
-            </tr>
-            <tr>
-                <td colspan="4">札幌市白石区菊水6条3丁目4-28</td><td colspan="2"></td>
-            </tr>
-        </table>
-        <a href="#" id="memberretrieval" class="square_btnf">会員検索</a>
-        <ui class="membername"><ruby><rb>武隈　蒼季</rb><rt>たけくま　あおき</rt></ruby></ui>
-        <div class="box1">
-            <ui class="memberno">会員No.10101010</ui>
+        <div class="container">
+            <div class="box1">
+                <ui class="memberno">会員No.#{memberBean.membership_number}</ui>
+            </div>
+            <ui class="membername"><ruby><rb>#{memberBean.name}</rb><rt>#{memberBean.phonetic_name}</rt></ruby></ui>
+
+            <a href="#" id="memberretrieval" class="square_btnf">会員検索</a>
+            <table class="memberif" border="1" align="right">
+                <tr>
+                    <th>電話番号</th><th>性別</th><th>年齢</th><th>最終利用日</th><th>入会日</th><th>有効期限</th>
+                </tr>
+                <tr align="center">
+                    <td>#{memberBean.phone_number}</td><td>#{memberBean.sex}</td><td>47</td>
+                    <td>2018/6/4</td><td>#{memberBean.join_date}</td><td>#{memberBean.expiration_date}</td>
+                </tr>
+                <tr>
+                    <td colspan="6" align="left">#{memberBean.address}</td>
+                </tr>
+            </table>
         </div>
         
         <script>

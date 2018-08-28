@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -14,95 +15,99 @@
         <h:outputScript name="bootstrap/js/bootstrap.min.js"/>
         <title>返却画面</title>
         <h:outputStylesheet library="css" name="henkyaku.css"/>
+        
+        <script type="text/javascript">
+            function keisan(){
+                var num0 = document.getElementById('inazuk1').innerHTML; //延滞料金
+                var num1 = document.getElementById('inazuk2').value; //預かり
+                var ans =parseInt(num1) - parseInt(num0);
+                
+                document.getElementById('inazuk3').innerHTML = ans; //おつり出力
+            }
+        </script>
 
+        
     </h:head>
-    <body>
-         <h:form>
-        <div id="top">
-            <ui:insert name="top">
-                <ui:include src="/templates/header.xhtml"/>
-            </ui:insert>
-        </div>
+    <h:body>
+        <h:form>
+            <div id="top">
+                <ui:insert name="top">
+                    <ui:include src="/templates/header.xhtml"/>
+                </ui:insert>
+            </div>
 
-        <div id="sidebar">
-            <ui:insert name="sidebar">
-                <ui:include src="/templates/sidebar.xhtml"/>
-            </ui:insert>
-        </div>
-        <div class="hd">
-            <h:dataTable value="#{henkyakuBb.henkyakubean}" var="h" border="2" 
-                         headerClass="hd1" >
-                <h:column>
-                    <f:facet name="header" class="hd2">
-                        <h:outputText  value="No"/>
-                    </f:facet>
-                    <h:outputText class="hd6" value="#{h.no}"/> 
-                </h:column>
-                <h:column>
-                    <f:facet name="header" class="hd3">
-                        <h:outputText value="タイトル"/>
-                    </f:facet>
-                    <h:outputText class="hd6" value="#{h.title}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header" class="hd4">
-                        <h:outputText value="ランク"/>
-                    </f:facet>
-                    <h:outputText class="hd6" value="#{h.rank}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header" class="hd5">
-                        <h:outputText  value="返却予定日"/>
-                    </f:facet>
-                    <h:outputText class="hd6" value="#{h.henkyakubi}"/>
-                </h:column>
-            </h:dataTable>
-        </div>
-        <div class="div1">
-        <tr>
-            <table border="1" class="tb1">
-                <div>
-                    <td class="td1">延滞日数</td>
-                    <td class="td2">#{henkyakuBean.enissu}</td>
+            <div id="sidebar">
+                <ui:insert name="sidebar">
+                    <ui:include src="/templates/sidebar.xhtml"/>
+                </ui:insert>
+            </div>
+            <div class="hd">
+                <h:dataTable value="#{henkyakuBb.henkyakubean}" var="h" border="2" 
+                             headerClass="hd1" >
+                    <h:column>
+                        <f:facet name="header" class="hd2">
+                            <h:outputText  value="No"/>
+                        </f:facet>
+                        <h:outputText class="hd6" value="#{h.no}"/> 
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header" class="hd3">
+                            <h:outputText value="タイトル"/>
+                        </f:facet>
+                        <h:outputText class="hd6" value="#{h.title}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header" class="hd4">
+                            <h:outputText value="ランク"/>
+                        </f:facet>
+                        <h:outputText class="hd6" value="#{h.rank}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header" class="hd5">
+                            <h:outputText  value="返却予定日"/>
+                        </f:facet>
+                        <h:outputText class="hd6" value="#{h.henkyakubi}"/>
+                    </h:column>
+                </h:dataTable>
+            </div>
+            <div class="div1">
+                <h:form class="tb1">
+                    <h:panelGrid border="1" columns="2" columnClasses="td1,td2" >
+                        延滞日数
+                        <h:outputText value="#{henkyakuBean.enissu}"/>
+                    </h:panelGrid>
+                </h:form>
+                <h:form class="tb2">
+                    <h:panelGrid border="1" columns="2" columnClasses="td3,td4" >
+                        延滞本数
+                        <h:outputText value="#{henkyakuBean.ehonsu}"/>
+                    </h:panelGrid>
+                </h:form>
+                <h:form class="tb3">
+                    <h:panelGrid border="1" columns="2" columnClasses="td5,td6" >
+                        延滞料金
+                        <h:outputText p:id="inazuk1"  value="#{henkyakuBean.eryoukin}"/>
+                    </h:panelGrid>
+                </h:form>
+                <div class="tb4">
+                    <h:panelGrid border="1" columns="2" columnClasses="td7,td8" >
+                        預金
+                        <h:inputText class="inazuk" p:id="inazuk2" value="#{henkyakuBean.azukari}" onchange="keisan()"/>
+                    </h:panelGrid>
                 </div>
-            </table>
-            <table border="1" class="tb2">
-                <div>
-                    <td class="td3">延滞本数</td>
-                    <td class="td4">#{henkyakuBean.ehonsu}</td>
+                <div class="tb5">
+                    <h:panelGrid border="1" columns="2" columnClasses="td9,td10" >
+                        おつり
+                        <h:outputText p:id="inazuk3" value="#{henkyakuBean.oturi}"/>
+                    </h:panelGrid>
                 </div>
-            </table>
-        </tr>
-        <tr>
-            <table border="1" class="tb3">
-                <div>
-                    <td class="td5">延滞料金</td>
-                    <td class="td6">#{henkyakuBean.eryoukin}</td>
-                </div>
-            </table>
-        </tr>
-        <tr>
-            <table border="1" class="tb4">
-                <div>
-                    <td class="td7">預金</td>
-                    <td id="td8"><h:inputText class="inazuk" value="#{henkyakuBean.setAzukari(Azukari)}"/></td>
-                </div>
-            </table>
-            <table border="1" class="tb5">
-                <div>
-                    <td class="td9">おつり</td>
-                    <td class="td10">#{henkyakuBean.oturi}</td>
-                </div>
-            </table>
-        </tr>
-        </div>
-       
-            <h:commandButton value="クリア" type="reset" class="cbtn"/>
+            </div>
+
+            <h:commandButton value="クリア" type="button" action="#{henkyakuBean.clear()}" class="cbtn" >
+                <f:ajax execute="@this" render="@all"/>
+            </h:commandButton>
             <h:commandButton value="確定" type="button" class="ebtn"/>
         </h:form>
-            
-
-
-
-    </body>
+        
+    </h:body>
 </html>
