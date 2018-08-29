@@ -110,7 +110,20 @@
         
         <h:form class="kaijo">
             <h5>ブラック会員解除</h5>
+            <label for="modal-check">
             <h:outputText value="解除する" styleClass="btn" />
+            </label>
+            <input type="checkbox" id="modal-check" />
+            <span class="modal">
+                <label for="modal-check">Close</label>
+                <h:form class="txt">
+                    <h:outputText value="ブラック会員解除" /><br/>
+                    <h:outputText value="会員名：大森壮馬" class="kai"/><br/>
+                    <h:outputText value="解除してよろしいですか。" class="kaku" /><br/>
+                    <input type="checkbox" name="kaijoc" value="ON" >はい、解除します</input><br/>
+                    <input type="button" value="確定" align="middle"/>
+                </h:form>
+            </span>
         </h:form>
         
         <h:form class="back">

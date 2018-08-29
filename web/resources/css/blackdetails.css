@@ -159,6 +159,24 @@ form.kaijo {
     background: #d9edf7;
 }
 
+.modal {
+  display: none;
+  width: 13vw;
+  height: 12vw;
+  background-color: #ccc;
+  position: absolute;
+  right: 300px;
+  bottom: 200px;
+  margin: auto;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, .8);
+}
+#modal-check {
+  display: none;
+}
+#modal-check:checked + .modal {
+  display: block;
+}
+
 .back {
     position: relative;
     top: 250px;
