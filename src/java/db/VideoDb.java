@@ -7,7 +7,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.persistence.Query;
 
 @Stateless
 public class VideoDb {
@@ -18,14 +18,12 @@ public class VideoDb {
     public void create(Cash_register tyukan) {
         em.persist(tyukan);
     }
-    
-    public void find() {
-        TypedQuery<Register_sales> r = em.createNamedQuery("Number", Register_sales.class);
-        r.setParameter(1, Register_sales.Number);
-        List<Register_sales> list = r.getResultList();
-        System.out.print(list);
+    /*
+    public List<Register_sales> find(String key) {
+        Query r = em.createNamedQuery(Register_sales.Number, Register_sales.class).setParameter("cash", key);
+        return r.getResultList();       
     }
-    
+    */
     public void update() {
         //em.merge();
     }
@@ -34,7 +32,4 @@ public class VideoDb {
         em.remove(em.merge(taikai));
     }
     
-    public List<Taikai> getAll() {
-        return em.createQuery("null").getResultList();
-    }
 }

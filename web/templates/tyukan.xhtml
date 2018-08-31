@@ -32,6 +32,13 @@
         </div>
 
         <!--入力欄-->
+        <!--
+        <h:form>
+            <h:inputText styleClass="reji" value="#{tyukanBean.cash_number}">
+                <f:ajax event="change" execute="@this" listener="" render="yotei"/>
+            </h:inputText>
+        </h:form>
+        -->
         <h:form>
             <h:panelGrid columns="3" cellspacing="0" rules="all" styleClass="main" columnClasses="m1,m2,m3">
                 <h:column><h:outputText value="金種"/></h:column>
@@ -122,7 +129,7 @@
         <!--予定額-->
         <h:panelGrid columns="3" cellpadding="0" rules="all" styleClass="yotei" columnClasses="y1, y2, y3">
             <h:outputText value="予定額"/> 
-            <h:outputText value=""/> 
+            <h:outputText id="yotei" value=""/> 
             <h:outputText value="円"/>
         </h:panelGrid>
 

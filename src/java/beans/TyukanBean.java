@@ -3,7 +3,9 @@ package beans;
 import db.VideoDb;
 import entity.Cash_register;
 import entity.Register_sales;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
@@ -24,6 +26,10 @@ public class TyukanBean {
     private int money8; //10
     private int money9; //5
     private int money10; //1
+    
+    List<Register_sales> re = new ArrayList<Register_sales>();
+    
+    private String str = " ";
 
     private static int earnings; //合計額
     private int planned_amount; //予定額
@@ -31,7 +37,7 @@ public class TyukanBean {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date datec; //日付
-    private String cash_number = "9701001B";//レジ番号
+    private String cash_number = "9701001A";//レジ番号
     private String store_code = "9701001";//店舗Code
     
     @EJB
@@ -194,14 +200,25 @@ public class TyukanBean {
        
         try {
             db.create(ty);
-            db.find();
         }catch(Exception e) {
             System.out.print("はいだめーーーー");
         }
     }
     /*
     public String find() {
-        
+        try {
+        cash_number = cash_number + str;
+        re = db.find(cash_number);
+        System.out.print(re);
+        }catch(Exception e) {
+             System.out.print("はいだめーーーー");
+        }
+        cash_number = re.toString();
+        cash_number = cash_number.replace("[", "");
+        cash_number = cash_number.replaceAll("]", "");
+        System.out.print(cash_number);
+        this.setCash_number(cash_number);
+        return null;
     }
     */
     //クリアボタン押下
@@ -217,6 +234,6 @@ public class TyukanBean {
         this.money8 = 0;
         this.money9 = 0;
         this.money10 = 0;
-       
+        this.earnings = 0;
     }
 }

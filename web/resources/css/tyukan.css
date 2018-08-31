@@ -2,6 +2,13 @@ body {
 
 }
 
+.reji {
+    position: relative;
+    top: 75px;
+    left: 700px;
+    background-color: #FFF;
+}
+
 .main {
     position: relative;
     top: 50px;
