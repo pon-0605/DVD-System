@@ -223,6 +223,7 @@ public class TyukanBean {
     */
     //クリアボタン押下
     
+    
     public void clear() {
         this.money1 = 0;
         this.money2 = 0;
